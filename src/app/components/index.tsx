@@ -12,7 +12,7 @@
 // UI COMPONENTS
 export { default as Button } from "./ui/Button";
 // export { default as Card } from "./ui/Card";
-// export { default as HamburgerMenu } from "./ui/HamburgerMenu";
+export { default as HamburgerMenu } from "./ui/HamburgerMenu";
 // export { default as Text } from "./ui/Text";
 // export { default as LogoHeader } from "./ui/LogoHeader";
 // export { default as ScrollProgressBar } from "./ui/ScrollProgressBar";
