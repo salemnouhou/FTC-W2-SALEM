@@ -2,10 +2,10 @@
 import React from 'react'
 import { useState, useRef, useEffect } from 'react';
 import Logo from "@/app/components/ui/Logo"
-import Image from 'next/image';
 import HamburgerMenu from './HamburgerMenu';
 import ArrowDown from './ArrowDown';
 import Button from './Button';
+import Link from 'next/link';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,10 +32,10 @@ const Navbar = () => {
 
     const dropdownMenus = {
         products: [
-            { label: 'Product 1', href: '#' },
-            { label: 'Product 2', href: '#' },
-            { label: 'Product 3', href: '#' },
-            { label: 'All Products', href: '#' }
+            { label: 'Business expense', href: '#' },
+            { label: 'Corporate cards', href: '#' },
+            { label: 'Reporting tools', href: '#' },
+            { label: 'Banking integrations', href: '#' }
         ],
         company: [
             { label: 'About Us', href: '#' },
@@ -49,9 +49,9 @@ const Navbar = () => {
         <nav className="bg-transparent border-[#FFFFFF29] border-b text-white relative z-50">
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between py-6 md:py-4">
-                    <div className="flex items-center">
+                    <Link href="/" className="flex items-center">
                         <Logo/>
-                    </div>
+                    </Link>
                     <div className="hidden xl:block">
                         <div className="ml-10 flex items-baseline space-x-4 gap-[40px]">
                             <div 
@@ -148,9 +148,9 @@ const Navbar = () => {
                 />
             )}
 
-            <div className={`fixed top-0 right-0 w-4/5 h-full bg-gray-800 transform transition-transform duration-300 ease-in-out xl:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            <div className={`fixed top-0  right-0 w-4/5 h-full bg-gray-800 transform transition-transform duration-300 ease-in-out xl:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}>
-                <div className="px-4 py-6">
+                <div className="px-4 py-6 ">
                     <div className="flex justify-end">
                         <button
                             onClick={() => setIsMenuOpen(false)}
@@ -161,7 +161,7 @@ const Navbar = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="mt-6 space-y-4">
+                    <div className="mt-6 space-y-4 ">
                         <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
                         <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
                         <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Services</a>

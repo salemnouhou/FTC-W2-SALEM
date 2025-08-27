@@ -1,62 +1,88 @@
 "use client";
 import React from "react";
 import Navbar from "../ui/Navbar";
-import ElipseTopRight from "@/assets/images/elipstopright.png"
-import ElipseDownLeft from "@/assets/images/elipsedownleft.png"
 import Image from "next/image";
+import Button from "../ui/Button";
+import Dashboard from '@/assets/images/dashboard.png';
 
-export const Hero: React.FC = () => {
+const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen w-full bg-secondary-500 overflow-hidden">
+    <section className="relative h-screen w-full bg-secondary-500 overflow-hidden flex flex-col">
       <Navbar />
 
-      <div className="flex items-center justify-center h-full">
-        <div className="text-center px-4">
-          <h1 className="text-bold-40 mb-4">
-            Bienvenue sur notre site
+      {/* Contenu texte */}
+      <div className="flex flex-col items-center  mt-24 justify-center  text-white md:text-center space-y-[12px]">
+        <div className=" w-full px-4">
+        <h1 className="md:hidden text-bold-36 ">
+          All your <br />
+          business expenses <br />
+          in one place.
+        </h1>
+        </div>
 
-          </h1>
-          <p className="text-regular-16 mb-6">
-            Découvrez nos produits et solutions innovantes
-          </p>
-          <button className="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
-            Commencer
-          </button>
+        <h1 className="hidden md:block text-bold-72">
+          All your business <br /> expenses in one place.
+        </h1>
+
+         <div className=" w-full px-4">
+         <span className="md:hidden text-regular-14 text-secondary-300 ">
+            Your one-stop finance empower platform. <br />
+            Manage all your business expenses with our <br /> supafast app.
+          </span>
+
+         </div>
+        <div className="hidden md:block text-regular-24 text-secondary-300">
+          <span>
+            Your one-stop finance empower platform. <br />
+            Manage all your business expenses with our supafast app.
+          </span>
+        </div>
+
+        {/* CTA */}
+        <div className="w-full pt-8 px-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+            <Button size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
+            <Button variant="minimal" className="w-full z-10 md:max-w-[187px]" size="large" label="See Pricing" />
+          </div>
+        </div>
+
+        {/* Image du Dashboard en bas, dans le flux normal */}
+        <div className="w-full max-w-4xl mt-20 px-4  md:pt-10 rounded-[3.73px]">
+          <Image
+            src={Dashboard}
+            alt="Dashboard Image"
+            className="w-full h-auto object-cover rounded-[3.73px] md:rounded-[11.79px]"
+          priority
+          />
         </div>
       </div>
 
-
-
-      <div className="  xl:hidden absolute  -top-[10px] -right-[640px] w-[914px] h-[914px] opacity-20">
-
+      {/* Décors cercles */}
+      <div className="xl:hidden absolute -top-[10px] -right-[640px] w-[914px] h-[914px] opacity-20">
         <svg width="328" height="228" viewBox="0 0 228 228" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle opacity="0.4" cx="227.5" cy="0.5" r="202.5" className="stroke-white" stroke-width="50" />
+          <circle opacity="0.4" cx="227.5" cy="0.5" r="202.5" className="stroke-white" strokeWidth="50" />
         </svg>
       </div>
 
-
-      <div className=" xl:hidden absolute  -bottom-[700px] -left-[40px] w-[914px] h-[914px] opacity-20">
+      <div className="xl:hidden absolute -bottom-[700px] -left-[40px] w-[914px] h-[914px] opacity-20">
         <svg width="328" height="228" viewBox="0 0 228 227" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle opacity="0.4" cx="0.5" cy="227.5" r="202.5" className="stroke-white" stroke-width="50" />
+          <circle opacity="0.4" cx="0.5" cy="227.5" r="202.5" className="stroke-white" strokeWidth="50" />
         </svg>
-
       </div>
 
-      <div className=" hidden xl:block absolute  -top-[60px] -right-[600px] w-[914px] h-[914px] opacity-20">
+      <div className="hidden xl:block absolute -top-[60px] -right-[600px] w-[914px] h-[914px] opacity-20">
         <svg width="457" height="457" viewBox="0 0 457 457" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle opacity="0.4" cx="457" r="407" stroke="white" stroke-width="100" />
+          <circle opacity="0.4" cx="457" r="407" stroke="white" strokeWidth="100" />
         </svg>
-
-
       </div>
 
-
-      <div className="hidden xl:block absolute  -bottom-[600px] -left-[90px] w-[914px] h-[914px] opacity-20">
+      <div className="hidden xl:block absolute -bottom-[600px] -left-[90px] w-[914px] h-[914px] opacity-20">
         <svg width="457" height="457" viewBox="0 0 457 457" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle opacity="0.4" cy="457" r="407" stroke="white" stroke-width="100" />
+          <circle opacity="0.4" cy="457" r="407" stroke="white" strokeWidth="100" />
         </svg>
-
       </div>
     </section>
   );
 };
+
+export default Hero;

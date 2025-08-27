@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { Button } from "./components/";
-import Navbar from "./components/ui/Navbar";
-import { Hero } from "./components/layout/Hero";
+import { Hero } from "./components";
 
 export default function Home() {
   return (
    <>
    <Hero/>
+   <div className="bg-red-500 py-4">
+
+   </div>
    </>
   );
 }

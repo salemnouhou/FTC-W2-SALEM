@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from "react";
 import clsx from "clsx";
 
@@ -13,6 +14,7 @@ interface ButtonProps {
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -23,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   iconLeft,
   iconRight,
   onClick,
+  className,
 }) => {
 
   // Classes par taille
@@ -39,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
     secondary:
       "bg-white text-secondary-400 border border-primary-200 rounded-[60px]  hover:border-secondary-400 hover:text-secondary-500  active:bg-secondary-100 active:border-secondary-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
       minimal:
-      "bg-white text-secondary-400  rounded-[60px]  hover:border-secondary-400 hover:text-secondary-500 hover:bg-white  active:bg-secondary-100 active:border-secondary-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
+      "bg-transparent text-secondary-400  rounded-[60px]  hover:border-secondary-400 hover:text-secondary-500 hover:bg-white  active:bg-secondary-100 active:border-secondary-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
   
   };
 
@@ -57,7 +60,8 @@ const Button: React.FC<ButtonProps> = ({
         sizeClasses[size],
         variantClasses[variant],
         state === "disabled" && "cursor-not-allowed opacity-50",
-        iconOnlyClasses
+        iconOnlyClasses,
+        className
       )}
       onClick={state === "disabled" ? undefined : onClick}
       disabled={state === "disabled"}
