@@ -10,7 +10,6 @@ const Hero: React.FC = () => {
     <section className="relative h-screen w-full bg-secondary-500 overflow-hidden flex flex-col">
       <Navbar />
 
-      {/* Contenu texte */}
       <div className="flex flex-col items-center  mt-24 justify-center  text-white md:text-center space-y-[12px]">
         <div className=" w-full px-4">
         <h1 className="md:hidden text-bold-36 ">
@@ -42,16 +41,15 @@ const Hero: React.FC = () => {
         <div className="w-full pt-8 px-4">
           <div className="flex flex-col md:flex-row justify-center items-center gap-6">
             <Button size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
-            <Button variant="minimal" className="w-full z-10 md:max-w-[187px]" size="large" label="See Pricing" />
+            <Button variant="minimal" className="w-full z-10 md:max-w-[187px] text-secondary-200 " size="large" label="See Pricing" />
           </div>
         </div>
 
-        {/* Image du Dashboard en bas, dans le flux normal */}
-        <div className="w-full max-w-4xl mt-20 px-4  md:pt-10 rounded-[3.73px]">
+        <div className="w-full max-w-[1200px] 2xl:max-w-[1440px]   mt-20 px-4  md:pt-10 rounded-[3.73px]">
           <Image
             src={Dashboard}
             alt="Dashboard Image"
-            className="w-full h-auto object-cover rounded-[3.73px] md:rounded-[11.79px]"
+            className="w-full h-auto  max-h-[852.86px] object-cover  rounded-[3.73px] md:rounded-[11.79px]"
           priority
           />
         </div>
