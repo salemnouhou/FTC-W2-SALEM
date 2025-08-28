@@ -5,8 +5,8 @@ export { default as Hero } from "./layout/Hero";
 export { default as Benefits } from "./layout/Benefits";
 export { default as HowItWorks } from "./layout/HowItWorks";
 export { default as SuccessStories } from "./layout/SuccessStories";
-// export { default as Footer } from "./layout/Footer";
-// export { default as Features } from "./layout/FeatureSection";
+export { default as Testimonials } from "./layout/Testimonials";
+export { default as Pricing } from "./layout/Pricing";
 // export { default as CardsSections } from "./layout/CardsSection";
 
 // UI COMPONENTS

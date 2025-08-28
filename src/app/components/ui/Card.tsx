@@ -1,100 +1,3 @@
-// import React, { ReactNode } from "react";
-// import clsx from "clsx";
-// import Image from "next/image";
-// import { desc, div } from "motion/react-client";
-
-// type CardVariant = "testimonial" | "benefitsOne" | "default";
-
-// interface CardProps {
-//   variant?: CardVariant;
-//   children?: ReactNode;
-//   image?: string;
-//   title?: string;
-//   description?: string;
-//   author?: string;
-//   className?: string;
-//   benefitType?: string;
-// }
-
-// const Card: React.FC<CardProps> = ({
-//   variant = "default",
-//   children,
-//   image,
-//   title,
-//   description,
-//   author,
-//   className,
-//   benefitType,
-// }) => {
-//   let content;
-
-//   if (variant === "testimonial") {
-//     content = (
-//       <div className="bg-primary/10 text-primary shadow-lg rounded-xl p-6 border-l-4 border-primary">
-//         <p className="italic">{description}</p>
-//         {author && <span className="block mt-2 font-semibold">- {author}</span>}
-//       </div>
-//     );
-//   } else if (variant === "benefitsOne") {
-//     content = (
-//       <div>
-//         <div className="bg-secondary-100/40 h-[325px] md: h-[307px]   relative  rounded-[10.16px] p-4  overflow-hidden">
-//           {image && benefitType === "first" && (
-//             <Image
-//               src={image}
-//               alt="title"
-//               width={320}
-
-//               className=" absolute top-[25px]  -left-4 left-2  z-0"
-//             />
-//           )}
-
-//           {image && benefitType === "second" && (
-//             <Image
-//               src={image}
-//               alt="title"
-//               width={320}
-//               className=" absolute top-[46px]  -left-4  left-2  z-0"
-//             />
-//           )}
-
-
-//           {image && benefitType === "third" && (
-//             <Image
-//               src={image}
-//               alt="title"
-//               width={310}
-//               className=" absolute top-[39px]  -left-4  left-2  z-0"
-//             />
-//           )}
-//           {/* Contenu de la carte - assurez-vous que le contenu a un z-index plus élevé */}
-//           <div>
-
-//           </div>
-//         </div>
-//         <div className="mt-4 space-y-4">
-//           <span className="text-secondary-900 text-medium-18">{title}</span>
-//           <p
-//             className="text-regular-12 text-secondary-400"
-//             dangerouslySetInnerHTML={{ __html: description }}
-//           ></p>
-
-//         </div>
-//       </div>
-//     );
-//   } else {
-//     content = (
-//       <div className="bg-white shadow-md rounded-lg p-4">
-//         {children}
-//       </div>
-//     );
-//   }
-
-//   return <div className={clsx("transition-all duration-200", className)}>{content}</div>;
-// };
-
-// export default Card;
-
 
 
 import React, { ReactNode } from "react";
@@ -114,27 +17,75 @@ interface CardProps {
   benefitType?: string;
   titleDesktop?: string;
   howItWorksType?: string;
+
+  testimonyTitle?: string;
+  testimonyDescription?: string;
+  testimonyDescriptionDesktop?: string;
+  testimonyAuthor?: string;
+  testimonyImage?: string;
+  testimonyRole?: string;
 }
 
 const Card: React.FC<CardProps> = ({
   variant = "default",
-  children,
   image,
   title,
   description,
-  author,
+  testimonyTitle,
+  testimonyDescription,
+  testimonyDescriptionDesktop,
+  testimonyAuthor,
+  testimonyImage,
+  testimonyRole,
   className,
   benefitType,
   titleDesktop,
-  howItWorksType
 }) => {
   let content;
 
   if (variant === "testimonial") {
     content = (
-      <div className="bg-primary/10 text-primary border  rounded-xl p-6">
-        <p className="italic">{description}</p>
-        {author && <span className="block mt-2 font-semibold">- {author}</span>}
+      <div className="  flex flex-col gap-6 p-6 bg-secondary-500 w-full  rounded-[9.98px] lg:rounded-[12px] ">
+        <span className="text-white">
+          {testimonyTitle}
+        </span>
+        <div className=" md:h-32  xl:hidden">
+          <p className="text-secondary-100 ">
+            {testimonyDescription}
+          </p>
+        </div>
+
+
+        <div className="   h-[125px]   hidden xl:block  ">
+          <p
+            className="text-secondary-100  "
+            dangerouslySetInnerHTML={{ __html: testimonyDescriptionDesktop || "" }}
+          />
+        </div>
+
+
+        <hr className="border-t border-1 border-secondary-400 " />
+
+        <div>
+          <div className="flex lg:gap-6 items-center gap-4">
+            <div className=" h-[58px] rounded-[10px] w-[58px] lg:h-[70px] lg:w-[70px] ">
+              {testimonyImage && (
+                <Image
+                  src={testimonyImage}
+                  alt={testimonyAuthor || "Author"}
+                  width={40}
+                  height={40}
+                  className="w-full h-full rounded-[10px] object-cover"
+                />
+              )}
+            </div>
+            <div className="flex flex-col space-y-[5px]">
+              <span className="text-white font-semibold text-medium-16 lg:text-bold-18">{testimonyAuthor}</span>
+              <span className="text-secondary-200 text-regular-12 lg:text-regular-14">{testimonyRole}</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   } else if (variant === "benefitsOne") {

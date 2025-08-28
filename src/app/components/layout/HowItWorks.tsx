@@ -11,7 +11,7 @@ import WorkTwoDown from '@/assets/images/HowItWorks/WorkTwoDown.svg'
 import Image from 'next/image'
 const HowItWorks = () => {
     return (
-        <div className='bg-secondary-700'>
+        <div className='bg-secondary-700 py-20'>
             {/* HOW IT WORKS ONE */}
 
             <div className='bg-secondary-700 px-4 py-20'>

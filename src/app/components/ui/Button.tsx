@@ -28,14 +28,12 @@ const Button: React.FC<ButtonProps> = ({
   className,
 }) => {
 
-  // Classes par taille
   const sizeClasses: Record<ButtonSize, string> = {
     small: "py-[5px] px-[16px] text-medium-12",
     medium: "py-[9px] px-[16px] text-medium-12",
     large: "py-[13px] px-[24px] text-medium-16",
   };
 
-  // Classes par variant
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
       "bg-primary text-white  hover:bg-primary-600 active:bg-primary-700 focus:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:bg-primary/40",

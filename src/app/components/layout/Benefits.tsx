@@ -9,7 +9,7 @@ import BenefitThreeTest from "../../../assets/images/Benefits/BenefitThreeTest.s
 const Benefits = () => {
     return (
         <>
-            <div className=' py-4 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4'>
+            <div className=' py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4'>
                 <div className='flex flex-col md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
                     <div className='md:hidden flex flex-col space-y-[6px]'>
                         <span className='text-medium-12 text-primary-500'>WHY USE SPEND.IN</span>
@@ -83,7 +83,7 @@ const Benefits = () => {
             </div>
 
 
-            <div className=' py-4 max-w-[1200px] lg:mt-14  2xl:max-w-[1440px] mx-auto px-4'>
+            <div className=' py-20 max-w-[1200px] lg:mt-14  2xl:max-w-[1440px] mx-auto px-4'>
 
             <div className='flex flex-col mb-8 md:hidden md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
                   
