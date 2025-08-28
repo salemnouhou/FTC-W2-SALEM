@@ -39,7 +39,7 @@ const Benefits = () => {
                 </div>
 
                 {/* BENEFITS CARDS SECTION */}
-                <div className='mt-4 md:mt-8  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 '>
+                <div className='mt-4 md:mt-8   grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 '>
                     <div className=' md:max-w-[470px]  rounded-[10.16px]  '>
                         <Card variant='benefitsOne'
                             title='Automatic Invoice Payment'

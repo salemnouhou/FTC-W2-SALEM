@@ -101,7 +101,7 @@ import React, { ReactNode } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 
-type CardVariant = "testimonial" | "benefitsOne" | "benefitsTwo";
+type CardVariant = "testimonial" | "benefitsOne" | "benefitsTwo" | "howitworks";
 
 interface CardProps {
   variant?: CardVariant;
@@ -112,6 +112,7 @@ interface CardProps {
   author?: string;
   className?: string;
   benefitType?: string;
+  titleDesktop?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -123,6 +124,7 @@ const Card: React.FC<CardProps> = ({
   author,
   className,
   benefitType,
+  titleDesktop,
 }) => {
   let content;
 
@@ -136,7 +138,7 @@ const Card: React.FC<CardProps> = ({
   } else if (variant === "benefitsOne") {
     content = (
       <div>
-        
+
         <div className="bg-gray-100  h-[325px] md:h-[307px] relative rounded-[10.16px]  overflow-hidden">
           {image && benefitType === "first" && (
             <Image
@@ -156,7 +158,7 @@ const Card: React.FC<CardProps> = ({
               className="absolute w-full  -bottom-[120px] md:-bottom-[70px] lg:-bottom-[120px] right-4 z-0 "
             />
           )}
-        
+
 
           {image && benefitType === "third" && (
             <Image
@@ -202,6 +204,39 @@ const Card: React.FC<CardProps> = ({
         </div>
 
 
+      </div>
+    );
+  } else if (variant === "howitworks") {
+    content = (
+      <div className=" flex flex-col items-center">
+
+        <div className="  w-[259px]  h-[258px] sm:h-[200px] sm:w-[200px]  md:h-[225px] md:w-[225px] relative rounded-[10.16px]  ">
+          {image && (
+            <Image
+              src={image}
+              alt="title"
+              width={320}
+              height={200}
+              className=" absolute right-5"
+            />
+          )}
+
+
+
+
+
+        </div>
+
+        <div className="mt-4 text-center space-y-4  px-1 rounded-[10.16px]">
+          <span
+            className="lg:hidden text-medium-14 text-white"
+            dangerouslySetInnerHTML={{ __html: title || "" }}
+          />
+          <span
+            className="hidden lg:block text-medium-14 text-white"
+            dangerouslySetInnerHTML={{ __html: titleDesktop || "" }}
+          />
+        </div>
       </div>
     );
   }

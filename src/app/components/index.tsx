@@ -3,7 +3,7 @@
 export { default as Navbar } from "./ui/Navbar";
 export { default as Hero } from "./layout/Hero";
 export { default as Benefits } from "./layout/Benefits";
-// export { default as SocialProof } from "./layout/SocialProof";
+export { default as HowItWorks } from "./layout/HowItWorks";
 // export { default as Sidebar } from "./layout/Sidebar";
 // export { default as Footer } from "./layout/Footer";
 // export { default as Features } from "./layout/FeatureSection";

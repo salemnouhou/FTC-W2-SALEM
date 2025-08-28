@@ -4,10 +4,11 @@ import Navbar from "../ui/Navbar";
 import Image from "next/image";
 import Button from "../ui/Button";
 import Dashboard from '@/assets/images/dashboard.png';
+import DashboardHero from '@/assets/images/DashbardHero.svg';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen w-full bg-secondary-500 overflow-hidden flex flex-col">
+    <section className="relative  w-full bg-secondary-500 overflow-hidden flex flex-col">
       <Navbar />
 
       <div className="flex flex-col items-center  mt-24 justify-center  text-white md:text-center space-y-[12px]">
@@ -45,11 +46,11 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-[1200px] 2xl:max-w-[1440px]   mt-20 px-4  md:pt-10 rounded-[3.73px]">
+        <div className="w-full   max-w-[1200px] 2xl:max-w-[1440px]    mt-20 px-4  md:pt-10 rounded-[3.73px]">
           <Image
-            src={Dashboard}
+            src={DashboardHero}
             alt="Dashboard Image"
-            className="w-full h-auto  max-h-[852.86px] object-cover  rounded-[3.73px] md:rounded-[11.79px]"
+            className="w-full h-auto  max-h-[852.86px] object-cover  rounded-[3.73px] "
           priority
           />
         </div>
@@ -84,3 +85,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
