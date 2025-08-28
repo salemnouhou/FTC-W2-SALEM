@@ -1,4 +1,4 @@
-import { Hero,Benefits,HowItWorks } from "./components";
+import { Hero,Benefits,HowItWorks,SuccessStories } from "./components";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
    <div className="bg-rwhite py-12">
       <Benefits/>
       <HowItWorks/>
+      <SuccessStories/>
    </div>
    </>
   );

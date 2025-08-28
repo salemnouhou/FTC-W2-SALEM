@@ -8,7 +8,6 @@ import WorkTwoLeft from '@/assets/images/HowItWorks/WorkTwoLeft.svg'
 import WorkTwoRight from '@/assets/images/HowItWorks/WorkTwoRight.svg'
 import WorkTwoDown from '@/assets/images/HowItWorks/WorkTwoDown.svg'
 
-import Content from "../../../assets/images/Benefits/Content.svg"
 import Image from 'next/image'
 const HowItWorks = () => {
     return (
@@ -79,7 +78,7 @@ const HowItWorks = () => {
 
             </div>
 
-            <div className=" w-full  lg:pb-8  px-4 ">
+            <div className=" w-full   lg:pb-8  px-4 ">
                 <div className="flex flex-col md:flex-row justify-center items-center gap-6">
                     <Button size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
                     <Button variant="minimal" className="w-full lg:bg-secondary-400/10 z-10 md:max-w-[187px] text-secondary-200 " size="large" label="See Pricing" />
@@ -87,7 +86,8 @@ const HowItWorks = () => {
             </div>
 
             {/* HOW IT WORKS TWO */}
-            <div className=' py-4 max-w-[1200px] lg:mt-16  2xl:max-w-[1440px] mx-auto px-4'>
+            <div className=' py-4 max-w-[1200px] mt-8 sm:mt-16  lg:mt-16  2xl:max-w-[1440px] mx-auto px-4'>
+               
                 <div className='flex flex-col md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
                     <div className='md:hidden flex flex-col space-y-[6px]'>
                         <span className='text-medium-12 text-primary-500'>HOW IT WORKS</span>
@@ -112,7 +112,7 @@ const HowItWorks = () => {
                 {/* BENEFITS CARDS 2 SECTION */}
 
 
-                <div className='grid md:grid-cols-2  md:hidden   justify-center items-center gap-10 md:gap-1 mt-8 md:mt-10 '>
+                <div className='grid md:grid-cols-2   md:hidden   justify-center items-center gap-10 md:gap-1 mt-8 md:mt-10 '>
                     <Image
                         src={WorkTwoLeft}
                         alt="title"
@@ -130,9 +130,9 @@ const HowItWorks = () => {
                 </div>
 
 
-                <div className='md:grid md:grid-cols-2   hidden justify-center items-center md:gap-20 mt-8 md:mt-0 max-w-5xl mx-auto '>
+                <div className='md:grid md:grid-cols-2   hidden justify-center items-center md:gap-20 mt-8 md:mt-0 max-w mx-auto '>
 
-                   <div className='py-2 h-full rounded-[12px]'>
+                   <div className='py-2 h-full max-h-[450px]  rounded-[12px]'>
                    <Image
                         src={WorkTwoRight}
                         alt="title"
@@ -142,7 +142,7 @@ const HowItWorks = () => {
                     />
 
                    </div>
-                    <div className=' h-full space-y-4 '>
+                    <div className=' max-h-[500px]  space-y-4 '>
 
 
                         <div className='p-2 w-full flex flex-col justify-center items-start gap-4 '>
@@ -156,13 +156,13 @@ const HowItWorks = () => {
                                 In just few easy step, you are all set to manage your business finances. <br />
                                 Manage all expenses with Spend.In all in one place.
                             </div>
-                           <div className=''>
+                           <div className=' w-full'>
                            <Image
                             src={WorkTwoDown}
                             alt="title"
                             width={319}
                             height={201}
-                            className="w-full  object-cover "
+                            className=" xl:max-h-[280px] w-full rounded-[12px] object-cover "
                         />
                            </div>
                         </div>

@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
     secondary:
       "bg-white text-secondary-400 border border-primary-200 rounded-[60px]  hover:border-secondary-400 hover:text-secondary-500  active:bg-secondary-100 active:border-secondary-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
       minimal:
-      " bg-transparent  rounded-[60px]  hover:border-secondary-400 hover:text-secondary-500 hover:bg-white   active:bg-secondary-100 active:border-secondary-200 focus:bg-secondary-500 focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
+      " bg-transparent  rounded-[60px] text-secondary-300  hover:border-secondary-400 hover:text-secondary-500 hover:bg-white   active:bg-secondary-100 active:border-secondary-200 focus:bg-secondary-500 focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
   
   };
 
@@ -63,7 +63,8 @@ const Button: React.FC<ButtonProps> = ({
         iconOnlyClasses,
         className
       )}
-      onClick={state === "disabled" ? undefined : onClick}
+      // onClick={state === "disabled" ? undefined : onClick}
+      onClick={onClick}
       disabled={state === "disabled"}
     >
       {iconLeft && <span className={label ? "mr-2" : ""}>{iconLeft}</span>}
