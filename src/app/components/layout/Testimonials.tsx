@@ -1,8 +1,8 @@
 import React from 'react'
 import Card from '../ui/Card'
-import firstTestimony from '@/assets/images/Testimony/firstTestimony.svg'
-import secondTestimony from '@/assets/images/Testimony/secondTestimony.svg'
-import thirdTestimony from '@/assets/images/Testimony/thirdTestimony.svg'
+import firstTestimony from '@/assets/images/testimony/firstTestimony.svg'
+import secondTestimony from '@/assets/images/testimony/secondTestimony.svg'
+import thirdTestimony from '@/assets/images/testimony/thirdTestimony.svg'
 import Button from '../ui/Button'
 
 const Testimonials = () => {
