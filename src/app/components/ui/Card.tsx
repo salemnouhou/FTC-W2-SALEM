@@ -101,7 +101,7 @@ import React, { ReactNode } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 
-type CardVariant = "testimonial" | "benefitsOne" | "benefitsTwo" | "howitworks";
+type CardVariant = "testimonial" | "benefitsOne" | "benefitsTwo" | "howitworks" | "howitworksTwo";
 
 interface CardProps {
   variant?: CardVariant;
@@ -113,6 +113,7 @@ interface CardProps {
   className?: string;
   benefitType?: string;
   titleDesktop?: string;
+  howItWorksType?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -125,6 +126,7 @@ const Card: React.FC<CardProps> = ({
   className,
   benefitType,
   titleDesktop,
+  howItWorksType
 }) => {
   let content;
 
@@ -218,6 +220,39 @@ const Card: React.FC<CardProps> = ({
               width={320}
               height={200}
               className=" absolute right-5"
+            />
+          )}
+
+
+
+
+
+        </div>
+
+        <div className="mt-4 text-center space-y-4  px-1 rounded-[10.16px]">
+          <span
+            className="lg:hidden text-medium-14 text-white"
+            dangerouslySetInnerHTML={{ __html: title || "" }}
+          />
+          <span
+            className="hidden lg:block text-medium-14 text-white"
+            dangerouslySetInnerHTML={{ __html: titleDesktop || "" }}
+          />
+        </div>
+      </div>
+    );
+  } else if (variant === "howitworksTwo") {
+    content = (
+      <div className=" flex flex-col items-center">
+
+        <div className="  w-[319px]  h-[211px]  relative   ">
+          {image && (
+            <Image
+              src={image}
+              alt="title"
+              width={320}
+              height={200}
+              className=" "
             />
           )}
 

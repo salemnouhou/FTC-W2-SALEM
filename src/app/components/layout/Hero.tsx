@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
         <div className="w-full pt-8 px-4">
           <div className="flex flex-col md:flex-row justify-center items-center gap-6">
             <Button size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
-            <Button variant="minimal" className="w-full z-10 md:max-w-[187px] text-secondary-200 " size="large" label="See Pricing" />
+            <Button variant="minimal" className="w-full lg:bg-secondary-400/10 z-10 md:max-w-[187px] text-secondary-200 " size="large" label="See Pricing" />
           </div>
         </div>
 
