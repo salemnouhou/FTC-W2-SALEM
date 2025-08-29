@@ -1,3 +1,5 @@
+
+
 "use client"
 import React from 'react'
 import { useState, useRef, useEffect } from 'react';
@@ -10,11 +12,12 @@ import Link from 'next/link';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
     const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (openDropdown && dropdownRefs.current[openDropdown] && 
+            if (openDropdown && dropdownRefs.current[openDropdown] &&
                 !dropdownRefs.current[openDropdown].contains(event.target as Node)) {
                 setOpenDropdown(null);
             }
@@ -28,6 +31,10 @@ const Navbar = () => {
 
     const toggleDropdown = (dropdownName: string) => {
         setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
+    };
+
+    const toggleMobileDropdown = (dropdownName: string) => {
+        setOpenMobileDropdown(openMobileDropdown === dropdownName ? null : dropdownName);
     };
 
     const dropdownMenus = {
@@ -47,19 +54,19 @@ const Navbar = () => {
 
     return (
         <nav className="bg-transparent border-[#FFFFFF29] border-b text-white relative z-50">
-            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1440px]  mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between py-6 md:py-4">
                     <Link href="/" className="flex items-center">
-                        <Logo/>
+                        <Logo />
                     </Link>
                     <div className="hidden xl:block">
                         <div className="ml-10 flex items-baseline space-x-4 gap-[40px]">
-                            <div 
+                            <div
                                 className='relative flex justify-center items-center gap-[6px]'
                                 ref={el => { dropdownRefs.current.products = el; }}
                             >
-                                <a href="#" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Products</a>
-                                <button 
+                                <button  onClick={() => toggleDropdown('products')} className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Products</button>
+                                <button
                                     onClick={() => toggleDropdown('products')}
                                     className={`transition-transform duration-200 ${openDropdown === 'products' ? 'rotate-180' : ''}`}
                                 >
@@ -84,23 +91,24 @@ const Navbar = () => {
                             </div>
 
                             <div className='flex justify-center items-center gap-1'>
-                                <a href="#" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Benefit</a>
+                                <Link href="#benefits" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Benefit</Link>
                             </div>
 
                             <div className='flex justify-center items-center gap-1'>
-                                <a href="#" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">How it Works</a>
+                                <Link href="#howitworks" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">How it Works</Link>
                             </div>
 
                             <div className='flex justify-center items-center gap-1'>
-                                <a href="#" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Pricing</a>
+                                <Link href="#pricing" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Pricing</Link>
                             </div>
 
-                            <div 
+                            <div
                                 className='relative flex justify-center items-center gap-[6px]'
                                 ref={el => { dropdownRefs.current.company = el; }}
                             >
-                                <a href="#" className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Company</a>
-                                <button 
+                                <button onClick={() => toggleDropdown('company')}
+                                    className="font-light text-md py-2 rounded-md font-jakarta relative  cursor-pointer font-sans  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">Company</button>
+                                <button
                                     onClick={() => toggleDropdown('company')}
                                     className={`transition-transform duration-200 ${openDropdown === 'company' ? 'rotate-180' : ''}`}
                                 >
@@ -131,6 +139,9 @@ const Navbar = () => {
                         </div>
                         <div>
                             <Button
+                            calNamespace="talk-to-an-expert"
+                            calLink="optyven/talk-to-an-expert"
+                            calConfig={{ layout: "month_view" }}
                                 variant='primary'
                                 size='large'
                                 label='Get Demo'
@@ -143,29 +154,134 @@ const Navbar = () => {
 
             {isMenuOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 xl:hidden"
+                    className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 xl:hidden z-40"
                     onClick={() => setIsMenuOpen(false)}
                 />
             )}
 
-            <div className={`fixed top-0  right-0 w-4/5 h-full bg-gray-800 transform transition-transform duration-300 ease-in-out xl:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+{/* MENU SIDEBAR AVEC DROPDOWNS */}
+            <div className={`fixed top-0 right-0 w-4/5 h-full bg-gray-800 transform transition-transform duration-300 ease-in-out xl:hidden z-50 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}>
-                <div className="px-4 py-6 ">
+                <div className="px-4 py-6">
                     <div className="flex justify-end">
                         <button
                             onClick={() => setIsMenuOpen(false)}
-                            className="text-gray-300 hover:text-white"
+                            className="text-gray-300 hover:text-white transition-colors"
                         >
                             <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
-                    <div className="mt-6 space-y-4 ">
-                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
-                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
-                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Services</a>
-                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
+                    <div className="mt-6 space-y-2">
+                        {/* Home */}
+                        <Link href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors">
+                            Home
+                        </Link>
+
+                        {/* Products avec dropdown mobile */}
+                        <div className="relative">
+                            <button
+                                onClick={() => toggleMobileDropdown('products')}
+                                className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors"
+                            >
+                                Products
+                                <svg 
+                                    className={`h-4 w-4 transform transition-transform duration-200 ${
+                                        openMobileDropdown === 'products' ? 'rotate-180' : 'rotate-0'
+                                    }`} 
+                                    fill="none" 
+                                    viewBox="0 0 24 24" 
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            {/* Sous-menu Products */}
+                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                openMobileDropdown === 'products' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                            }`}>
+                                <div className="ml-4 mt-2 space-y-1 border-l-2 border-primary pl-4">
+                                    {dropdownMenus.products.map((item, index) => (
+                                        <Link
+                                            key={index}
+                                            href={item.href}
+                                            className="block px-3 py-2 rounded-md text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
+                                            onClick={() => {
+                                                setOpenMobileDropdown(null);
+                                                setIsMenuOpen(false);
+                                            }}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <Link href="#benefits" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors">
+                            Benefit
+                        </Link>
+
+                        <Link href="#howitworks" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors">
+                            How It Works
+                        </Link>
+
+                        <Link href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors">
+                            Pricing
+                        </Link>
+
+                        <div className="relative">
+                            <button
+                                onClick={() => toggleMobileDropdown('company')}
+                                className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors"
+                            >
+                                Company
+                                <svg 
+                                    className={`h-4 w-4 transform transition-transform duration-200 ${
+                                        openMobileDropdown === 'company' ? 'rotate-180' : 'rotate-0'
+                                    }`} 
+                                    fill="none" 
+                                    viewBox="0 0 24 24" 
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                openMobileDropdown === 'company' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                            }`}>
+                                <div className="ml-4 mt-2 space-y-1 border-l-2 border-primary pl-4">
+                                    {dropdownMenus.company.map((item, index) => (
+                                        <Link
+                                            key={index}
+                                            href={item.href}
+                                            className="block px-3 py-2 rounded-md text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
+                                            onClick={() => {
+                                                setOpenMobileDropdown(null);
+                                                setIsMenuOpen(false);
+                                            }}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                     
+
+                        {/* Button Get Demo */}
+                        <div className="pt-4 space-y-4">
+                            <Button variant='minimal' label='Login' size='large' className="w-full bg-secondary-400/50 text-white" />
+                            <Button
+                            calNamespace="talk-to-an-expert"
+                            calLink="optyven/talk-to-an-expert"
+                            calConfig={{ layout: "month_view" }}
+                            label='Get Demo' size='large' className="w-full" />
+                        </div>
                     </div>
                 </div>
             </div>

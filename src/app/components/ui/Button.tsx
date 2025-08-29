@@ -6,7 +6,7 @@ type ButtonSize = "small" | "medium" | "large";
 type ButtonVariant = "primary" | "secondary" | "minimal";
 type ButtonState = "enabled" | "disabled";
 
-interface ButtonProps {
+type ButtonProps = {
   size?: ButtonSize;
   variant?: ButtonVariant;
   state?: ButtonState;
@@ -15,6 +15,11 @@ interface ButtonProps {
   iconRight?: ReactNode;
   onClick?: () => void;
   className?: string;
+
+  calNamespace?: string;
+  calLink?: string;
+  calConfig?: Record<string, unknown>;
+
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -26,6 +31,9 @@ const Button: React.FC<ButtonProps> = ({
   iconRight,
   onClick,
   className,
+  calNamespace,
+  calLink,
+  calConfig,
 }) => {
 
   const sizeClasses: Record<ButtonSize, string> = {
@@ -39,9 +47,9 @@ const Button: React.FC<ButtonProps> = ({
       "bg-primary text-white  hover:bg-primary-600 active:bg-primary-700 focus:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:bg-primary/40",
     secondary:
       "bg-white text-secondary-400 border border-primary-200 rounded-[60px]  hover:border-secondary-400 hover:text-secondary-500  active:bg-secondary-100 active:border-secondary-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
-      minimal:
+    minimal:
       " bg-transparent  rounded-[60px] text-secondary-300  hover:border-secondary-400 hover:text-secondary-500 hover:bg-white   active:bg-secondary-100 active:border-secondary-200 focus:bg-secondary-500 focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
-  
+
   };
 
   const baseClasses =
@@ -53,6 +61,11 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      {...(calNamespace ? { "data-cal-namespace": calNamespace } : {})}
+      {...(calLink ? { "data-cal-link": calLink } : {})}
+      {...(calConfig
+        ? { "data-cal-config": JSON.stringify(calConfig) }
+        : {})}
       className={clsx(
         baseClasses,
         sizeClasses[size],
@@ -61,8 +74,7 @@ const Button: React.FC<ButtonProps> = ({
         iconOnlyClasses,
         className
       )}
-      // onClick={state === "disabled" ? undefined : onClick}
-      onClick={onClick}
+      onClick={state === "disabled" ? undefined : onClick}
       disabled={state === "disabled"}
     >
       {iconLeft && <span className={label ? "mr-2" : ""}>{iconLeft}</span>}

@@ -20,7 +20,7 @@ const Pricing = () => {
             features: [
                 { name: 'Sync accross device', active: true },
                 { name: '5 workspace', active: true },
-                { name: 'Collaborate with 5 user', active: true },
+                { name: 'Collaborate with 5 users', active: true },
                 { name: 'Sharing permission', active: false },
                 { name: 'Admin tools', active: false },
                 { name: '100+ integrations', active: false }
@@ -35,9 +35,9 @@ const Pricing = () => {
                 <path d="M19.52 9.81336L5.55996 23.7734C4.91996 24.4134 3.85329 24.2534 3.42663 23.4534C2.93329 22.5467 2.66663 21.4934 2.66663 20.3867V7.61336C2.66663 5.82669 3.69329 5.41336 4.94663 6.66669L8.38663 10.12C8.90663 10.6267 9.75996 10.6267 10.28 10.12L15.0533 5.33336C15.5733 4.81336 16.4266 4.81336 16.9466 5.33336L19.5333 7.92003C20.04 8.44003 20.04 9.29336 19.52 9.81336Z" fill="#7C5CFC" />
             </svg>
             ,
-            description: 'Perfect plan for professional!',
-            monthlyPrice: 12,
-            yearlyPrice: 4.2,
+            description: 'Perfect plan for professionals!',
+            monthlyPrice: 20,
+            yearlyPrice: 12,
             features: [
                 { name: 'Everything in Free Plan', active: true },
                 { name: 'Unlimited workspace', active: true },
@@ -46,7 +46,7 @@ const Pricing = () => {
                 { name: 'Admin tools', active: true },
                 { name: '100+ integrations', active: true }
             ],
-            buttonText: 'Get Started',
+            buttonText: 'Get Your Free Plan',
             buttonColor: 'bg-purple-500 hover:bg-purple-600',
             popular: true
         },
@@ -57,8 +57,8 @@ const Pricing = () => {
             </svg>
             ,
             description: 'Best suits for great company!',
-            monthlyPrice: 33,
-            yearlyPrice: 11.55,
+            monthlyPrice: 40,
+            yearlyPrice: 33,
             features: [
                 { name: 'Everything in Pro Plan', active: true },
                 { name: 'Daily performance reports', active: true },
@@ -67,7 +67,7 @@ const Pricing = () => {
                 { name: 'Marketing tools & automations', active: true },
                 { name: 'Advanced security', active: true }
             ],
-            buttonText: 'Get Started',
+            buttonText: 'Get Your Free Plan',
             buttonColor: 'bg-purple-500 hover:bg-purple-600'
         }
     ];
@@ -77,9 +77,8 @@ const Pricing = () => {
     };
 
     return (
-        <div className="min-h-screen  py-20 px-4">
+        <section id='pricing' className="min-h-screen  py-20 px-4">
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
                 <div className="text-center mb-12">
                     <h1 className="text-bold-24 lg:text-bold-40 font-bold text-gray-900 mb-4">
                         Our User Kind Words
@@ -89,7 +88,6 @@ const Pricing = () => {
                     </p>
                 </div>
 
-                {/* Toggle */}
                 <div className=' flex justify-center mb-12 items-center '>
                     <div className="flex  relative  flex-col gap-4 justify-center items-center">
                         <div>
@@ -121,7 +119,7 @@ const Pricing = () => {
 
                             <div className='absolute -right-4 top-3'>
                                 <svg width="70" height="69" viewBox="0 0 75 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_52_2366)">
+                                    <g clipPath="url(#clip0_52_2366)">
                                         <path fillRule="evenodd" clipRule="evenodd" d="M47.9733 23.9621C48.0497 24.4127 48.1178 24.8005 48.1549 25.0053C48.3835 26.2507 48.5758 29.413 49.4575 31.5637C50.1296 33.2047 51.2037 34.2635 52.8374 33.8822C54.3222 33.5356 55.2464 32.0553 55.6913 30.0088C56.6486 25.6043 55.4942 18.5679 54.5965 16.5323C54.4983 16.3101 54.2396 16.2094 54.0174 16.3075C53.7962 16.4051 53.6955 16.6638 53.7937 16.886C54.6546 18.8397 55.7526 25.5942 54.8337 29.8226C54.4742 31.4753 53.8368 32.7475 52.6373 33.0273C51.4536 33.304 50.7571 32.4208 50.2699 31.2312C49.4114 29.1383 49.2404 26.0595 49.0185 24.8467C48.879 24.0865 48.4288 21.1721 48.33 20.9316C48.2066 20.6304 47.9511 20.6386 47.8675 20.6476C47.8026 20.6545 47.4816 20.7097 47.4671 21.1085C47.2561 26.7945 42.9968 35.3736 36.7318 41.1166C30.5219 46.8091 22.3116 49.7125 14.0863 44.0656C13.8863 43.9288 13.6128 43.9797 13.4755 44.1788C13.3387 44.3788 13.3896 44.6523 13.5897 44.7891C22.2081 50.7057 30.8191 47.7277 37.3247 41.7642C42.8077 36.7383 46.7734 29.5895 47.9733 23.9621Z" fill="#0D121F" />
                                         <path fillRule="evenodd" clipRule="evenodd" d="M14.3049 44.6629C15.3364 44.5779 16.3661 44.5262 17.3916 44.361C20.1238 43.9215 22.8697 42.8862 25.0856 41.2122C25.2792 41.0652 25.317 40.7901 25.1715 40.5969C25.0246 40.4033 24.7494 40.3656 24.5563 40.5111C22.4542 42.1011 19.8446 43.0771 17.2524 43.4939C16.0785 43.6823 14.8976 43.7203 13.7162 43.833C13.6573 43.8393 13.1425 43.8726 13.0357 43.9095C12.7867 43.994 12.7375 44.188 12.7263 44.2806C12.7159 44.358 12.7221 44.453 12.7723 44.5592C12.814 44.646 12.9319 44.7923 13.1312 44.9543C13.7677 45.4754 15.4268 46.4776 15.6818 46.6709C18.6043 48.8866 20.9513 51.4386 23.4894 54.0636C23.6585 54.2372 23.9368 54.2422 24.111 54.0741C24.2851 53.906 24.2892 53.6281 24.121 53.454C21.551 50.7955 19.1707 48.2146 16.2123 45.9724C16.0375 45.8389 15.0289 45.1531 14.3049 44.6629Z" fill="#0D121F" />
                                     </g>
@@ -138,7 +136,6 @@ const Pricing = () => {
                     </div>
                 </div>
 
-                {/* Pricing Cards */}
                 <div className="flex flex-col lg:flex-row  lg:justify-center gap-6 lg:gap-8 max-w-6xl mx-auto">
                     {plans.map((plan, index) => (
                         <div
@@ -148,11 +145,10 @@ const Pricing = () => {
                         >
 
 
-                            {/* Plan Header */}
                             <div className="flex  items-center justify-between mb-4">
                                 <div className='flex itms-center'>
                                     {plan.icon}
-                                    <h3 className="text-xl font-bold text-gray-900 ml-2">{plan.name}</h3>
+                                    <h3 className="text-medium-24 font-bold text-gray-900 ml-2">{plan.name}</h3>
                                 </div>
                                 {plan.popular && (
                                     <div className="">
@@ -163,16 +159,15 @@ const Pricing = () => {
                                 )}
                             </div>
 
-                            <p className="text-gray-600 text-sm mb-6">{plan.description}</p>
+                            <p className="text-gray-600 text-regular-14 mb-6">{plan.description}</p>
 
 
-                            {/* Price */}
                             <div className="mb-8">
                                 <div className="flex items-baseline">
                                     <span className="text-4xl font-bold text-gray-900">
                                         ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                                     </span>
-                                    <span className="text-gray-600 ml-1">/month</span>
+                                    <span className="text-secondary-400 text-medium-14 ml-1">/month</span>
                                 </div>
                                 {/* {isYearly && plan.monthlyPrice > 0 && (
                                     <p className="text-sm text-gray-500 mt-1">
@@ -181,26 +176,24 @@ const Pricing = () => {
                                 )} */}
                             </div>
 
-                            {/* Description */}
                             <div className="mb-8">
                                 {plan.name === 'Free' && (
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-regular-14 text-gray-600">
                                         A free plan grants you access to some cool features of Spend.In.
                                     </p>
                                 )}
                                 {plan.name === 'Pro' && (
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-regular-14 text-gray-600">
                                         For professional only! Start arranging your experiences with our best templates.
                                     </p>
                                 )}
                                 {plan.name === 'Ultimate' && (
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-regular-14 text-gray-600">
                                         If you a finance manager at big company, this plan is a perfect match.
                                     </p>
                                 )}
                             </div>
 
-                            {/* Features */}
                             <div className="mb-8 space-y-4">
                                 {plan.features.map((feature, featureIndex) => (
                                     <div key={featureIndex} className="flex items-center">
@@ -219,7 +212,7 @@ const Pricing = () => {
 
                                             </div>
                                         )}
-                                        <span className={`ml-3 text-sm ${feature.active ? 'text-gray-900' : 'text-gray-500'}`}>
+                                        <span className={`ml-3 text-medium-14 lg:text-medium-18 ${feature.active ? 'text-secondary-700' : 'text-secondary-400'}`}>
                                             {feature.name}
                                         </span>
                                     </div>
@@ -229,15 +222,15 @@ const Pricing = () => {
 
 
                             <Button
-                                className={`w-full py-3 px-4 ${plan.name === "Free" ? "mt-5" : plan.name === "Ultimate" ? "mt-4" : ""}  text-white font-medium transition-colors `}
+                                className={`w-full py-3 px-4 ${plan.name === "Free" ? "md:mt-12" : plan.name === "Ultimate" ? "" : "md:mt-8"}  text-white lg:text-medium-16 text-medium-14 transition-colors `}
                                 label={plan.buttonText}
-                                size='medium'
+                                size='large'
                             />
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

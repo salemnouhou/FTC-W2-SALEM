@@ -9,9 +9,10 @@ import WorkTwoRight from '@/assets/images/HowItWorks/WorkTwoRight.svg'
 import WorkTwoDown from '@/assets/images/HowItWorks/WorkTwoDown.svg'
 
 import Image from 'next/image'
+import Link from 'next/link'
 const HowItWorks = () => {
     return (
-        <div className='bg-secondary-700 py-20'>
+        <section id="howitworks" className='bg-secondary-700 py-20'>
             {/* HOW IT WORKS ONE */}
 
             <div className='bg-secondary-700 px-4 py-20'>
@@ -80,8 +81,16 @@ const HowItWorks = () => {
 
             <div className=" w-full   lg:pb-8  px-4 ">
                 <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-                    <Button size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
+                    <Button
+                    calNamespace="talk-to-an-expert"
+                    calLink="optyven/talk-to-an-expert"
+                    calConfig={{ layout: "month_view" }}
+                    size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
+                    <Link href="#pricing" >
+
                     <Button variant="minimal" className="w-full lg:bg-secondary-400/10 z-10 md:max-w-[187px] text-secondary-200 " size="large" label="See Pricing" />
+            </Link>
+                
                 </div>
             </div>
 
@@ -175,7 +184,7 @@ const HowItWorks = () => {
             </div>
 
             
-        </div>
+        </section>
     )
 }
 

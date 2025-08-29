@@ -8,7 +8,7 @@ import BenefitThreeTest from "../../../assets/images/Benefits/BenefitThreeTest.s
 
 const Benefits = () => {
     return (
-        <>
+        <section id="benefits">
             <div className=' py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4'>
                 <div className='flex flex-col md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
                     <div className='md:hidden flex flex-col space-y-[6px]'>
@@ -176,7 +176,7 @@ const Benefits = () => {
                 </div>
 
             </div>
-        </>
+        </section>
     )
 }
 

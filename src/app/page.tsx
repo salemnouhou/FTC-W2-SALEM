@@ -1,4 +1,4 @@
-import { Hero,Benefits,HowItWorks,SuccessStories,Testimonials,Pricing } from "./components";
+import { Hero,Benefits,HowItWorks,SuccessStories,Testimonials,Pricing, CtaSection, Footer } from "./components";
 
 export default function Home() {
   return (
@@ -10,6 +10,9 @@ export default function Home() {
       <SuccessStories/>
       <Testimonials/>
       <Pricing/>
+      
+      <CtaSection/>
+      <Footer/>
    </div>
    </>
   );

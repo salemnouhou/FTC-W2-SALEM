@@ -64,7 +64,7 @@ const Card: React.FC<CardProps> = ({
         </div>
 
 
-        <hr className="border-t border-1 border-secondary-400 " />
+        <hr className="border-t border-secondary-400/20 " />
 
         <div>
           <div className="flex lg:gap-6 items-center gap-4">

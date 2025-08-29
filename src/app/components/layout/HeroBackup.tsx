@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Image Dashboard avec espacement responsive corrigé */}
+          {/* Image Dashboard  */}
           <div className="w-full border absolute z-10 -bottom-10 md:-bottom-14 lg:-bottom-8 xl:-bottom-12 lg:max-h-[460px] max-w-[1200px] 2xl:max-w-[1440px] mt-8 md:mt-12 lg:mt-16 px-4 md:pt-10 rounded-[3.73px]">
             <Image
               src={Dashboard}

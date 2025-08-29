@@ -10,7 +10,7 @@ const SuccessStories = () => {
     const [activeTab, setActiveTab] = useState('withSpeedIn');
 
     return (
-        <div className='py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4 mt-8'>
+        <section className='py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4 mt-8'>
             <div className='flex flex-col md:flex-row md:gap-[163px]  md:items-center space-y-[px]'>
                 <div className='md:hidden flex flex-col space-y-[6px]'>
                     <span className='text-medium-12 text-primary-500'>INCREASE PRODUCTIVITY</span>
@@ -171,7 +171,7 @@ const SuccessStories = () => {
 
 
             </div>
-        </div>
+        </section>
     )
 }
 

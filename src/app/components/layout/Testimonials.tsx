@@ -7,7 +7,7 @@ import Button from '../ui/Button'
 
 const Testimonials = () => {
     return (
-        <div className='bg-secondary-700 py-20'>
+        <section className='bg-secondary-700 py-20'>
             {/* HOW IT WORKS ONE */}
 
             <div className='bg-secondary-700 px-4 '>
@@ -99,16 +99,18 @@ const Testimonials = () => {
                 </div>
                 <div className=' hidden lg:flex gap-6 lg:justify-center lg:items-center  max-w-5xl mx-auto border-secondary-600'>
 
-                    <button className='h-[48px] hover:bg-primary-500 transition-all duration-500 bg-secondary-400/10 flex justify-center items-center w-[48px] rounded-full'>
+                    <button className='h-[48px] w-[48px]  hover:h-[50px] hover:w-[50px] bg-secondary-400/10 hover:bg-primary  transition-all duration-300 hover:shadow-primary-600 hover:shadow-md hover:shadow-primary-500 flex justify-center items-center  rounded-full'>
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.1775 4.44727L2.625 8.99977L7.1775 13.5523" stroke="#C3D4E9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M15.3749 9H2.75244" stroke="#C3D4E9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7.1775 4.44727L2.625 8.99977L7.1775 13.5523" stroke="#C3D4E9" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M15.3749 9H2.75244" stroke="#C3D4E9" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </button>
-                    <button className='h-[50px] bg-primary hover:bg-primary-600 transition-all duration-300 hover:shadow-primary-600 shadow-md shadow-primary-500 flex justify-center items-center w-[50px] rounded-full'>
+
+
+                    <button className='h-[48px] w-[48px] hover:h-[50px] hover:w-[50px] bg-secondary-400/10 hover:bg-primary  transition-all duration-300 hover:shadow-primary-600 hover:shadow-md hover:shadow-primary-500 flex justify-center items-center  rounded-full'>
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.8225 4.44727L15.375 8.99977L10.8225 13.5523" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M2.625 9H15.2475" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M10.8225 4.44727L15.375 8.99977L10.8225 13.5523" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.625 9H15.2475" stroke="white"strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
 
                     </button>
@@ -122,7 +124,7 @@ const Testimonials = () => {
 
 
 
-        </div>
+        </section>
     )
 }
 
