@@ -4,13 +4,26 @@ import LeftSuccessStories from '../ui/LeftSuccessStoris'
 import Button from '../ui/Button'
 import greenChart from "@/assets/images/successStories/greenChart.svg"
 import redChart from "@/assets/images/successStories/redChart.svg"
-import Image from 'next/image'
-const SuccessStories = () => {
+import { ImageWithSkeleton } from '../ui/ImageWithSkeleton'
+import { motion } from "motion/react"
+import { Tilt } from 'react-tilt'
 
+const SuccessStories = () => {
+    const defaultOptions = {
+        reverse: false,
+        max: 35,
+        perspective: 1000,
+        scale: 1.1,    
+        speed: 1000,  
+        transition: true, 
+        axis: null,    
+        reset: true,    
+        easing: "cubic-bezier(.03,.98,.52,.99)",   
+    }
     const [activeTab, setActiveTab] = useState('withSpeedIn');
 
     return (
-        <section className='py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4 mt-8'>
+        <section className='py-10 lg:py-14 py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4 mt-8'>
             <div className='flex flex-col md:flex-row md:gap-[163px]  md:items-center space-y-[px]'>
                 <div className='md:hidden flex flex-col space-y-[6px]'>
                     <span className='text-medium-12 text-primary-500'>INCREASE PRODUCTIVITY</span>
@@ -67,7 +80,11 @@ const SuccessStories = () => {
 
                     {
                         activeTab === "withSpeedIn" && (
-                            <div className='flex flex-col space-y-[32px] justify-center'>
+                            <motion.div
+                            initial={{ opacity: 0, x: -43 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                            className='flex flex-col space-y-[32px] justify-center'>
                                 <p className='text-bold-16 text-secondary-700 lg:hidden'>Track Business Expenses until its <br /> Milisecond</p>
                                 <p className='text-bold-24 text-secondary-700 hidden lg:block'>Track Business Expenses until its Milisecond</p>
 
@@ -97,13 +114,18 @@ const SuccessStories = () => {
                                     </svg>
                                     }
                                 />
-                            </div>
+                            </motion.div>
                         )
                     }
 
                     {
                         activeTab === "withoutSpeedIn" && (
-                            <div className='flex flex-col space-y-[32px] justify-center'>
+                            <motion.div
+                            initial={{ opacity: 0, x: -43 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            
+                            className='flex flex-col space-y-[32px] justify-center'>
                                 <p className='text-bold-16 text-secondary-700 lg:hidden'>Track Business Expenses until its <br /> Milisecond</p>
                                 <p className='text-bold-24 text-secondary-700 hidden lg:block'>Track Business Expenses until its Milisecond</p>
 
@@ -136,7 +158,7 @@ const SuccessStories = () => {
 
                                     }
                                 />
-                            </div>
+                            </motion.div>
                         )
 
                     }
@@ -144,29 +166,45 @@ const SuccessStories = () => {
 
                 {/* Colonne droite - Card principale */}
                 {activeTab === "withSpeedIn" && (
+                    <Tilt options={defaultOptions} >
 
-                    <div className='flex items-center justify-center  h-full'>
-
-                        <Image
+                    <motion.div
+                    initial={{ opacity: 0, x: 43 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className='flex items-center justify-center  h-full'>
+                        
+                        <ImageWithSkeleton
                             src={greenChart}
                             alt="Green Chart"
-                            className='w-full md:max-w-[470px] rounded-[10.16px]'
+                            className='w-full  md:max-w-[470px] rounded-[10.16px]'
 
                         />
-                    </div>
+                        
+                     </motion.div>
+                     </Tilt>
+
                 )}
 
                 {activeTab === "withoutSpeedIn" && (
+                    <Tilt options={defaultOptions} >
 
-                    <div className='flex items-center justify-center  h-full'>
+                    <motion.div
+                    initial={{ opacity: 0, x: 43 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className='flex items-center justify-center  h-full'>
 
-                        <Image
+                        <ImageWithSkeleton
                             src={redChart}
                             alt="Green Chart"
                             className='w-full h-full  md:max-w-[470px] rounded-[10.16px]'
 
                         />
-                    </div>
+                    </motion.div>
+
+                    </Tilt>
+
                 )}
 
 

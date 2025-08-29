@@ -15,13 +15,13 @@ const CustomCursor = () => {
   return (
     <>
       <div
-        className="fixed w-10 h-10 rounded-full border-2 border-primary-500 pointer-events-none z-[9999] transition-transform duration-75 ease-out"
+        className="fixed w-10 h-10 hidden xl:block rounded-full border-2 border-primary-500 pointer-events-none z-[9999] transition-transform duration-75 ease-out"
         style={{
           transform: `translate(${pos.x - 20}px, ${pos.y - 20}px)`,
         }}
       />
       <div
-        className="fixed w-2 h-2 rounded-full bg-gray-200 pointer-events-none z-[9999]"
+        className="fixed w-2 h-2 hidden xl:block rounded-full bg-gray-200 pointer-events-none z-[9999]"
         style={{
           transform: `translate(${pos.x - 4}px, ${pos.y - 4}px)`,
         }}

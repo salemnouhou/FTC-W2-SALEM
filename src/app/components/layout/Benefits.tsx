@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { Card, LeftBenefit } from "@/app/components"
 
@@ -5,11 +6,12 @@ import Content from "../../../assets/images/Benefits/Content.svg"
 import BenefitOneTest from "../../../assets/images/Benefits/BenefitOneTest.svg"
 import BenefitTwoTest from "../../../assets/images/Benefits/BenefitTwoTest.svg"
 import BenefitThreeTest from "../../../assets/images/Benefits/BenefitThreeTest.svg"
+import { motion } from "motion/react"
 
 const Benefits = () => {
     return (
         <section id="benefits">
-            <div className=' py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4'>
+            <div className='py-10 lg:py-14 xl:py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4'>
                 <div className='flex flex-col md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
                     <div className='md:hidden flex flex-col space-y-[6px]'>
                         <span className='text-medium-12 text-primary-500'>WHY USE SPEND.IN</span>
@@ -38,7 +40,11 @@ const Benefits = () => {
 
                 {/* BENEFITS CARDS SECTION */}
                 <div className='mt-4 md:mt-8   grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 '>
-                    <div className=' md:max-w-[470px]  rounded-[10.16px]  '>
+                    <motion.div
+                    initial={{ opacity: 0, x: -43 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className=' md:max-w-[470px]  rounded-[10.16px]  '>
                         <Card variant='benefitsOne'
                             title='Automatic Invoice Payment'
                             description="No need to pay manually, we provide automatic <br /> invoice payment service! Set a payment schedule <br /> and you're done, it's that easy!"
@@ -47,8 +53,12 @@ const Benefits = () => {
 
                         />
 
-                    </div>
-                    <div className=' md:max-w-[470px]  rounded-[10.16px]  '>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 43 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    className=' md:max-w-[470px]  rounded-[10.16px]  '>
                         <Card variant='benefitsOne'
                             title='Clear payment history'
                             description="Still writing manual expenses? Our platform breaks <br /> down every expense you log down to the <br /> millisecond!"
@@ -56,8 +66,13 @@ const Benefits = () => {
                             benefitType='second'
                         />
 
-                    </div>
-                    <div className=' md:max-w-[470px]  rounded-[10.16px] '>
+                    </motion.div>
+                    <motion.div 
+                    initial={{ opacity: 0, x: 43 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    
+                    className=' md:max-w-[470px]  rounded-[10.16px] '>
                         <Card variant='benefitsOne'
                             title='Use of multi-card payments'
                             description="Have more than 1 bank account or credit/debit card? <br /> Our platform is already integrated with many banks <br /> around the world, for easier payments!"
@@ -66,7 +81,7 @@ const Benefits = () => {
 
                         />
 
-                    </div>
+                    </motion.div>
                     <div className=' md:max-w-[470px] hidden sm:block lg:hidden  rounded-[10.16px]  '>
                         <Card variant='benefitsOne'
                             title='Automatic Invoice Payment'
@@ -83,7 +98,7 @@ const Benefits = () => {
             </div>
 
 
-            <div className=' py-20 max-w-[1200px] lg:mt-14  2xl:max-w-[1440px] mx-auto px-4'>
+            <div className='py-10 lg:py-14 xl:py-20 max-w-[1200px] lg:mt-14  2xl:max-w-[1440px] mx-auto px-4'>
 
             <div className='flex flex-col mb-8 md:hidden md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
                   
@@ -125,7 +140,11 @@ const Benefits = () => {
 
 
                 <div className='mt-2 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 items-start'>
-                    <div className='space-y-6 flex flex-col justify-center h-full'>
+                    <motion.div
+                    initial={{ opacity: 0, x: -43 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className='space-y-6 flex flex-col justify-center h-full'>
                         <LeftBenefit
                             title='Automatic Invoice Payment'
                             descriptionPhone='Automatic payments help you to arrange <br/> payments on a certain date without doing it <br/> manually again.'
@@ -161,17 +180,21 @@ const Benefits = () => {
                                 <path d="M12.7874 8.608H13.4402C13.7922 8.608 14.0802 8.32 14.0802 7.968V7.6864C14.0802 6.3616 12.9986 5.28 11.6738 5.28H4.32657C3.78257 5.28 3.28337 5.4592 2.88017 5.7664C2.29777 6.2016 1.92017 6.8992 1.92017 7.6864V8.8256C1.92017 9.0688 2.17617 9.2224 2.40657 9.1456C2.76497 9.024 3.14257 8.96 3.52017 8.96C5.45937 8.96 7.04017 10.5408 7.04017 12.48C7.04017 12.9408 6.91857 13.4464 6.72657 13.8944C6.62417 14.1248 6.78417 14.4 7.03377 14.4H11.6738C12.9986 14.4 14.0802 13.3184 14.0802 11.9936V11.872C14.0802 11.52 13.7922 11.232 13.4402 11.232H12.8834C12.269 11.232 11.6802 10.8544 11.5202 10.2592C11.3922 9.7728 11.5458 9.2992 11.8658 8.992C12.1026 8.7488 12.429 8.608 12.7874 8.608ZM9.28017 8.48H6.08017C5.81777 8.48 5.60017 8.2624 5.60017 8C5.60017 7.7376 5.81777 7.52 6.08017 7.52H9.28017C9.54257 7.52 9.76017 7.7376 9.76017 8C9.76017 8.2624 9.54257 8.48 9.28017 8.48Z" fill="white" />
                             </svg>}
                         />
-                    </div>
+                    </motion.div>
 
                     {/* Colonne droite - Card principale */}
-                    <div className='flex items-center justify-center'>
-                        <div className='w-full md:max-w-[470px] rounded-[10.16px]'>
+                    <div className='flex  items-center justify-center'>
+                        <motion.div
+                        initial={{ opacity: 0, x: 43 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className='w-full md:max-w-[470px] rounded-[10.16px]'>
                             <Card
                                 variant='benefitsTwo'
                                 image={Content}
                                 benefitType='first'
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 

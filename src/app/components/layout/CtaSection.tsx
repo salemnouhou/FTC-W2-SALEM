@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../ui/Button'
 import CtaImage from "@/assets/images/Cta/CtaImage.svg"
 import Image from 'next/image'
+import { ImageWithSkeleton } from '../ui/ImageWithSkeleton'
 const CtaSection = () => {
     return (
      
@@ -40,11 +41,11 @@ const CtaSection = () => {
                 className='w-full  md:w-auto text-medium-16'
                 />
             </div>
-            <div className=' xl:relative w-full  pl-4'> 
-                <Image
+            <div className=' xl:relative w-full   pl-4'> 
+                <ImageWithSkeleton
                 src={CtaImage}
                 alt='Cta Image'
-                className='w-full xl:absolute xl:w-full xl:h-[450px] '
+                className='w-full rounded-tl-[10px] xl:rounded-tl-[16px] xl:absolute xl:w-full xl:h-[450px] '
                 />
             </div>
         </div>

@@ -1,8 +1,21 @@
 "use client";
 import { useState } from 'react';
 import Button from '../ui/Button';
+import { motion } from "motion/react"
+import { Tilt } from 'react-tilt'
 
 const Pricing = () => {
+    const defaultOptions = {
+        reverse: false,
+        max: 35,
+        perspective: 1000,
+        scale: 1.1,    
+        speed: 1000,  
+        transition: true, 
+        axis: null,    
+        reset: true,    
+        easing: "cubic-bezier(.03,.98,.52,.99)",   
+    }
     const [isYearly, setIsYearly] = useState(true);
 
     const plans = [
@@ -81,7 +94,7 @@ const Pricing = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h1 className="text-bold-24 lg:text-bold-40 font-bold text-gray-900 mb-4">
-                        Our User Kind Words
+                    Ready to Get Started?
                     </h1>
                     <p className="text-secondary-400 text-regular-14 lg:text-regular-20">
                         Choose a plan that suits your business needs
@@ -136,11 +149,17 @@ const Pricing = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row  lg:justify-center gap-6 lg:gap-8 max-w-6xl mx-auto">
+                <div className="flex  flex-col lg:flex-row  lg:justify-center gap-6 lg:gap-8 max-w-6xl mx-auto">
                     {plans.map((plan, index) => (
-                        <div
-                            key={plan.name}
-                            className={`relative bg-secondary-100/20 rounded-[12px] shadow-sm  p-8 transition-all duration-200 hover:shadow-lg w-full lg:w-80 lg:flex-shrink-0 ${plan.popular ? 'border-purple-200 shadow-lg' : 'border-gray-200'
+                <Tilt  key={plan.name} options={defaultOptions} >
+                        
+                        <motion.div
+                        initial={{ opacity: 0, y: 43 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+
+                           
+                            className={` relative bg-secondary-100/20 rounded-[12px] shadow-sm  p-8 transition-all duration-200 hover:shadow-lg w-full lg:w-80 lg:flex-shrink-0 ${plan.popular ? 'border-purple-200 shadow-lg' : 'border-gray-200'
                                 }`}
                         >
 
@@ -226,7 +245,9 @@ const Pricing = () => {
                                 label={plan.buttonText}
                                 size='large'
                             />
-                        </div>
+                        </motion.div>
+                                             </Tilt>
+                        
                     ))}
                 </div>
             </div>

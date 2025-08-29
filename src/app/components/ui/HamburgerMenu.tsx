@@ -11,7 +11,7 @@ type HamburgerMenuProps = {
 
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isMenuOpen, toggleMenu }) => {
 
-  return <div className="xl:hidden">
+  return <div className="xl:hidden mr-4">
     <button
       onClick={toggleMenu}
       className="inline-flex items-center justify-center p-2  h-[44px] w-[45px]   transition-all duration-200"

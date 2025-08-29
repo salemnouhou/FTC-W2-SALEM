@@ -1,13 +1,16 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import Navbar from "../ui/Navbar";
-import Image from "next/image";
 import Button from "../ui/Button";
 import DashboardHero from '@/assets/images/DashbardHero.svg';
 import ScrollProgressBar from "../ui/ScrollProgressBar";
 import { gsap } from 'gsap';
-import Link from "next/link";
 import { getCalApi } from "@calcom/embed-react";
+import { ImageWithSkeleton } from "../ui/ImageWithSkeleton";
+import { motion } from "motion/react"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 
 const Hero: React.FC = () => {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -19,10 +22,8 @@ const Hero: React.FC = () => {
 
 
   const scrollToSection: ScrollToSection = (sectionId) => {
-    const element = document.querySelector(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    gsap.to(window, { duration: 1.5, scrollTo: sectionId, ease: "power2.inOut" });
+    
   };
 
   useEffect(() => {
@@ -88,30 +89,46 @@ const Hero: React.FC = () => {
 
       <div className="flex flex-col items-center  mt-24 justify-center  text-white md:text-center space-y-[12px]">
         <div className=" w-full px-4">
-          <h1 className="md:hidden text-bold-36 ">
+          <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="md:hidden text-bold-36 ">
             All your <br />
             business expenses <br />
             in one place.
-          </h1>
+          </motion.h1>
         </div>
 
-        <h1 className="hidden md:block text-bold-72">
+        <motion.h1
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+        className="hidden md:block text-bold-72">
           All your business <br /> expenses in one place.
-        </h1>
+        </motion.h1>
 
-        <div className=" w-full px-4">
+        <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className=" w-full px-4">
           <span className="md:hidden text-regular-14 text-secondary-300 ">
             Your one-stop finance empower platform. <br />
             Manage all your business expenses with our <br /> supafast app.
           </span>
 
-        </div>
-        <div className="hidden md:block text-regular-24 text-secondary-300">
+        </motion.div>
+        <motion.div
+         initial={{ opacity: 0, y: 30 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.6 }}
+        className="hidden md:block text-regular-24 text-secondary-300">
           <span className="">
             Your one-stop finance empower platform. <br />
             Manage all your business expenses with our supafast app.
           </span>
-        </div>
+        </motion.div>
 
         {/* CTA */}
         <div className="w-full pt-8 px-4">
@@ -131,7 +148,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div ref={imageRef} className="w-full  z-20  max-w-[1200px] 2xl:max-w-[1440px]    mt-20 px-4  md:pt-10 rounded-[3.73px]">
-          <Image
+          <ImageWithSkeleton
             src={DashboardHero}
             alt="Dashboard Image"
             className="w-full h-auto   max-h-[852.86px] object-cover  rounded-[3.73px] lg:rounded-t-[11.79px]"

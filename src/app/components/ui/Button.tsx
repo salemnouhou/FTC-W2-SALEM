@@ -1,6 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
 import clsx from "clsx";
+import { motion } from "motion/react"
 
 type ButtonSize = "small" | "medium" | "large";
 type ButtonVariant = "primary" | "secondary" | "minimal";
@@ -60,7 +61,11 @@ const Button: React.FC<ButtonProps> = ({
   const iconOnlyClasses = isIconOnly ? "p-[12px] w-10 rounded-full h-10" : "";
 
   return (
-    <button
+    <motion.button
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+  
       {...(calNamespace ? { "data-cal-namespace": calNamespace } : {})}
       {...(calLink ? { "data-cal-link": calLink } : {})}
       {...(calConfig
@@ -80,7 +85,7 @@ const Button: React.FC<ButtonProps> = ({
       {iconLeft && <span className={label ? "mr-2" : ""}>{iconLeft}</span>}
       {label && <span>{label}</span>}
       {iconRight && <span className={label ? "ml-2" : ""}>{iconRight}</span>}
-    </button>
+    </motion.button>
   );
 };
 

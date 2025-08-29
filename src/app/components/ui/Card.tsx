@@ -71,7 +71,7 @@ const Card: React.FC<CardProps> = ({
           <div className="flex lg:gap-6 items-center gap-4">
             <div className=" h-[58px] rounded-[10px] w-[58px] lg:h-[70px] lg:w-[70px] ">
               {testimonyImage && (
-                <Image
+                <ImageWithSkeleton
                   src={testimonyImage}
                   alt={testimonyAuthor || "Author"}
                   width={40}
@@ -105,7 +105,7 @@ const Card: React.FC<CardProps> = ({
             />
           )}
           {image && benefitType === "second" && (
-            <Image
+            <ImageWithSkeleton
               src={image}
               alt="title"
               width={320}
@@ -116,7 +116,7 @@ const Card: React.FC<CardProps> = ({
 
 
           {image && benefitType === "third" && (
-            <Image
+            <ImageWithSkeleton
               src={image}
               alt="title"
               width={320}
@@ -144,7 +144,7 @@ const Card: React.FC<CardProps> = ({
       <div>
         <div className="bg-gray-100  h-[325px] md:h-[307px] relative rounded-[10.16px]  overflow-hidden">
           {image && (
-            <Image
+            <ImageWithSkeleton
               src={image}
               alt="title"
               width={320}
@@ -167,7 +167,7 @@ const Card: React.FC<CardProps> = ({
 
         <div className="  w-[259px]  h-[258px] sm:h-[200px] sm:w-[200px]  md:h-[225px] md:w-[225px] relative rounded-[10.16px]  ">
           {image && (
-            <Image
+            <ImageWithSkeleton
               src={image}
               alt="title"
               width={320}
@@ -200,7 +200,7 @@ const Card: React.FC<CardProps> = ({
 
         <div className="  w-[319px]  h-[211px]  relative   ">
           {image && (
-            <Image
+            <ImageWithSkeleton
               src={image}
               alt="title"
               width={320}

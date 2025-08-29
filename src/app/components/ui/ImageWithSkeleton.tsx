@@ -26,8 +26,7 @@ export function ImageWithSkeleton({
         <div
           className={clsx(
             "absolute inset-0 rounded-md overflow-hidden",
-            "bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200",
-            "dark:from-gray-800 dark:via-gray-700 dark:to-gray-800",
+            "bg-gradient-to-r from-gray-50 via-gray-00 to-primary-200",
             "animate-pulse",
             "before:absolute before:inset-0",
             "before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent",

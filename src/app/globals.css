@@ -4,7 +4,7 @@
 
 html, body {
     @apply font-jakarta;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
   
   @keyframes pulse {
