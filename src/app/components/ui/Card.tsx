@@ -3,6 +3,7 @@
 import React, { ReactNode } from "react";
 import clsx from "clsx";
 import Image from "next/image";
+import { ImageWithSkeleton } from "./ImageWithSkeleton";
 
 type CardVariant = "testimonial" | "benefitsOne" | "benefitsTwo" | "howitworks" | "howitworksTwo";
 
@@ -94,12 +95,13 @@ const Card: React.FC<CardProps> = ({
 
         <div className="bg-gray-100  h-[325px] md:h-[307px] relative rounded-[10.16px]  overflow-hidden">
           {image && benefitType === "first" && (
-            <Image
+            <ImageWithSkeleton
               src={image}
               alt="title"
               width={320}
               height={200}
               className="absolute w-full -bottom-[120px] md:-bottom-[70px] lg:-bottom-[120px] right-4 z-0 "
+            
             />
           )}
           {image && benefitType === "second" && (
