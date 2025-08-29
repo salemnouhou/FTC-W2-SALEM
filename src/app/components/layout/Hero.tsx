@@ -23,13 +23,13 @@ const Hero: React.FC = () => {
 
   const scrollToSection: ScrollToSection = (sectionId) => {
     gsap.to(window, { duration: 1.5, scrollTo: sectionId, ease: "power2.inOut" });
-    
+
   };
 
   useEffect(() => {
     (async () => {
       const cal = await getCalApi({ namespace: "talk-to-an-expert" });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view",theme: "dark" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view", theme: "dark" });
     })();
   }, []);
 
@@ -90,10 +90,10 @@ const Hero: React.FC = () => {
       <div className="flex flex-col items-center  mt-24 justify-center  text-white md:text-center space-y-[12px]">
         <div className=" w-full px-4">
           <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="md:hidden text-bold-36 ">
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="md:hidden text-bold-36 ">
             All your <br />
             business expenses <br />
             in one place.
@@ -101,18 +101,18 @@ const Hero: React.FC = () => {
         </div>
 
         <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-        className="hidden md:block text-bold-72">
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="hidden md:block text-bold-72">
           All your business <br /> expenses in one place.
         </motion.h1>
 
         <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className=" w-full px-4">
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className=" w-full px-4">
           <span className="md:hidden text-regular-14 text-secondary-300 ">
             Your one-stop finance empower platform. <br />
             Manage all your business expenses with our <br /> supafast app.
@@ -120,10 +120,10 @@ const Hero: React.FC = () => {
 
         </motion.div>
         <motion.div
-         initial={{ opacity: 0, y: 30 }}
-         whileInView={{ opacity: 1, y: 0 }}
-         transition={{ duration: 0.6 }}
-        className="hidden md:block text-regular-24 text-secondary-300">
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="hidden md:block text-regular-24 text-secondary-300">
           <span className="">
             Your one-stop finance empower platform. <br />
             Manage all your business expenses with our supafast app.
@@ -134,14 +134,14 @@ const Hero: React.FC = () => {
         <div className="w-full pt-8 px-4">
           <div className="flex flex-col md:flex-row justify-center items-center gap-6">
             <Button
-            calNamespace="talk-to-an-expert"
-            calLink="optyven/talk-to-an-expert"
-            calConfig={{ layout: "month_view" }}
-            size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
-            
-            
-              <Button 
-              onClick={()=>scrollToSection("#pricing")} variant="minimal" className="w-full  w-full lg:bg-secondary-400/10 z-10 md:max-w-[187px] text-secondary-200 " size="large" label="See Pricing" />
+              calNamespace="talk-to-an-expert"
+              calLink="optyven/talk-to-an-expert"
+              calConfig={{ layout: "month_view" }}
+              size="large" className="w-full z-10 md:max-w-[187px]" variant="primary" label="Get a Free Demo" />
+
+
+            <Button
+              onClick={() => scrollToSection("#pricing")} variant="minimal" className="w-full  w-full lg:bg-secondary-400/10 z-10 md:max-w-[187px] text-secondary-200 " size="large" label="See Pricing" />
 
 
           </div>

@@ -1,27 +1,10 @@
 "use client";
-import React, { ReactNode } from "react";
+import React from "react";
 import clsx from "clsx";
 import { motion } from "motion/react"
+import { ButtonProps, ButtonSize, ButtonVariant } from "@/app/types";
 
-type ButtonSize = "small" | "medium" | "large";
-type ButtonVariant = "primary" | "secondary" | "minimal";
-type ButtonState = "enabled" | "disabled";
 
-type ButtonProps = {
-  size?: ButtonSize;
-  variant?: ButtonVariant;
-  state?: ButtonState;
-  label?: string;
-  iconLeft?: ReactNode;
-  iconRight?: ReactNode;
-  onClick?: () => void;
-  className?: string;
-
-  calNamespace?: string;
-  calLink?: string;
-  calConfig?: Record<string, unknown>;
-
-}
 
 const Button: React.FC<ButtonProps> = ({
   size = "medium",
@@ -56,16 +39,15 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses =
     "inline-flex items-center justify-center rounded-[60px]  font-jakarta transition-colors duration-200";
 
-  // Ajustement pour icon-only
   const isIconOnly = !label && (iconLeft || iconRight);
   const iconOnlyClasses = isIconOnly ? "p-[12px] w-10 rounded-full h-10" : "";
 
   return (
     <motion.button
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-  
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+
       {...(calNamespace ? { "data-cal-namespace": calNamespace } : {})}
       {...(calLink ? { "data-cal-link": calLink } : {})}
       {...(calConfig

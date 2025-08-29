@@ -5,17 +5,7 @@ import { motion } from "motion/react"
 import Tilt from 'react-parallax-tilt'
 
 const Pricing = () => {
-    const defaultOptions = {
-        reverse: false,
-        max: 35,
-        perspective: 1000,
-        scale: 1.1,    
-        speed: 1000,  
-        transition: true, 
-        axis: null,    
-        reset: true,    
-        easing: "cubic-bezier(.03,.98,.52,.99)",   
-    }
+
     const [isYearly, setIsYearly] = useState(true);
 
     const plans = [
@@ -94,7 +84,7 @@ const Pricing = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h1 className="text-bold-24 lg:text-bold-40 font-bold text-gray-900 mb-4">
-                    Ready to Get Started?
+                        Ready to Get Started?
                     </h1>
                     <p className="text-secondary-400 text-regular-14 lg:text-regular-20">
                         Choose a plan that suits your business needs
@@ -151,103 +141,103 @@ const Pricing = () => {
 
                 <div className="flex  flex-col lg:flex-row  lg:justify-center gap-6 lg:gap-8 max-w-6xl mx-auto">
                     {plans.map((plan, index) => (
-                <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05}  key={plan.name}  >
-                        
-                        <motion.div
-                        initial={{ opacity: 0, y: 43 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
+                        <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05} key={plan.name}  >
 
-                           
-                            className={` relative bg-secondary-100/20 rounded-[12px] shadow-sm  p-8 transition-all duration-200 hover:shadow-lg w-full lg:w-80 lg:flex-shrink-0 ${plan.popular ? 'border-purple-200 shadow-lg' : 'border-gray-200'
-                                }`}
-                        >
+                            <motion.div
+                                initial={{ opacity: 0, y: 43 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
 
 
-                            <div className="flex  items-center justify-between mb-4">
-                                <div className='flex itms-center'>
-                                    {plan.icon}
-                                    <h3 className="text-medium-24 font-bold text-gray-900 ml-2">{plan.name}</h3>
-                                </div>
-                                {plan.popular && (
-                                    <div className="">
-                                        <span className="bg-gray-900 text-white text-sm font-medium px-3 py-1 rounded-full">
-                                            Popular
-                                        </span>
+                                className={` relative bg-secondary-100/20 rounded-[12px] shadow-sm  p-8 transition-all duration-200 hover:shadow-lg w-full lg:w-80 lg:flex-shrink-0 ${plan.popular ? 'border-purple-200 shadow-lg' : 'border-gray-200'
+                                    }`}
+                            >
+
+
+                                <div className="flex  items-center justify-between mb-4">
+                                    <div className='flex itms-center'>
+                                        {plan.icon}
+                                        <h3 className="text-medium-24 font-bold text-gray-900 ml-2">{plan.name}</h3>
                                     </div>
-                                )}
-                            </div>
-
-                            <p className="text-gray-600 text-regular-14 mb-6">{plan.description}</p>
-
-
-                            <div className="mb-8">
-                                <div className="flex items-baseline">
-                                    <span className="text-4xl font-bold text-gray-900">
-                                        ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
-                                    </span>
-                                    <span className="text-secondary-400 text-medium-14 ml-1">/month</span>
+                                    {plan.popular && (
+                                        <div className="">
+                                            <span className="bg-gray-900 text-white text-sm font-medium px-3 py-1 rounded-full">
+                                                Popular
+                                            </span>
+                                        </div>
+                                    )}
                                 </div>
-                                {/* {isYearly && plan.monthlyPrice > 0 && (
+
+                                <p className="text-gray-600 text-regular-14 mb-6">{plan.description}</p>
+
+
+                                <div className="mb-8">
+                                    <div className="flex items-baseline">
+                                        <span className="text-4xl font-bold text-gray-900">
+                                            ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                                        </span>
+                                        <span className="text-secondary-400 text-medium-14 ml-1">/month</span>
+                                    </div>
+                                    {/* {isYearly && plan.monthlyPrice > 0 && (
                                     <p className="text-sm text-gray-500 mt-1">
                                         Billed annually (${(plan.yearlyPrice * 12).toFixed(0)}/year)
                                     </p>
                                 )} */}
-                            </div>
+                                </div>
 
-                            <div className="mb-8">
-                                {plan.name === 'Free' && (
-                                    <p className="text-regular-14 text-gray-600">
-                                        A free plan grants you access to some cool features of Spend.In.
-                                    </p>
-                                )}
-                                {plan.name === 'Pro' && (
-                                    <p className="text-regular-14 text-gray-600">
-                                        For professional only! Start arranging your experiences with our best templates.
-                                    </p>
-                                )}
-                                {plan.name === 'Ultimate' && (
-                                    <p className="text-regular-14 text-gray-600">
-                                        If you a finance manager at big company, this plan is a perfect match.
-                                    </p>
-                                )}
-                            </div>
+                                <div className="mb-8">
+                                    {plan.name === 'Free' && (
+                                        <p className="text-regular-14 text-gray-600">
+                                            A free plan grants you access to some cool features of Spend.In.
+                                        </p>
+                                    )}
+                                    {plan.name === 'Pro' && (
+                                        <p className="text-regular-14 text-gray-600">
+                                            For professional only! Start arranging your experiences with our best templates.
+                                        </p>
+                                    )}
+                                    {plan.name === 'Ultimate' && (
+                                        <p className="text-regular-14 text-gray-600">
+                                            If you a finance manager at big company, this plan is a perfect match.
+                                        </p>
+                                    )}
+                                </div>
 
-                            <div className="mb-8 space-y-4">
-                                {plan.features.map((feature, featureIndex) => (
-                                    <div key={featureIndex} className="flex items-center">
-                                        {feature.active ? (
-                                            <div className="flex-shrink-0 w-[20px] h-[20px] bg-green-100 rounded-full flex items-center justify-center">
-                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M10 0C4.49 0 0 4.49 0 10C0 15.51 4.49 20 10 20C15.51 20 20 15.51 20 10C20 4.49 15.51 0 10 0ZM14.78 7.7L9.11 13.37C8.97 13.51 8.78 13.59 8.58 13.59C8.38 13.59 8.19 13.51 8.05 13.37L5.22 10.54C4.93 10.25 4.93 9.77 5.22 9.48C5.51 9.19 5.99 9.19 6.28 9.48L8.58 11.78L13.72 6.64C14.01 6.35 14.49 6.35 14.78 6.64C15.07 6.93 15.07 7.4 14.78 7.7Z" fill="#9CD323" />
-                                                </svg>
+                                <div className="mb-8 space-y-4">
+                                    {plan.features.map((feature, featureIndex) => (
+                                        <div key={featureIndex} className="flex items-center">
+                                            {feature.active ? (
+                                                <div className="flex-shrink-0 w-[20px] h-[20px] bg-green-100 rounded-full flex items-center justify-center">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 0C4.49 0 0 4.49 0 10C0 15.51 4.49 20 10 20C15.51 20 20 15.51 20 10C20 4.49 15.51 0 10 0ZM14.78 7.7L9.11 13.37C8.97 13.51 8.78 13.59 8.58 13.59C8.38 13.59 8.19 13.51 8.05 13.37L5.22 10.54C4.93 10.25 4.93 9.77 5.22 9.48C5.51 9.19 5.99 9.19 6.28 9.48L8.58 11.78L13.72 6.64C14.01 6.35 14.49 6.35 14.78 6.64C15.07 6.93 15.07 7.4 14.78 7.7Z" fill="#9CD323" />
+                                                    </svg>
 
-                                            </div>
-                                        ) : (
-                                            <div className="flex-shrink-0 w-[20px] h-[20px] bg-gray-100 rounded-full flex items-center justify-center">
-                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M10 0C4.49 0 0 4.49 0 10C0 15.51 4.49 20 10 20C15.51 20 20 15.51 20 10C20 4.49 15.51 0 10 0ZM13.36 12.3C13.65 12.59 13.65 13.07 13.36 13.36C13.21 13.51 13.02 13.58 12.83 13.58C12.64 13.58 12.45 13.51 12.3 13.36L10 11.06L7.7 13.36C7.55 13.51 7.36 13.58 7.17 13.58C6.98 13.58 6.79 13.51 6.64 13.36C6.35 13.07 6.35 12.59 6.64 12.3L8.94 10L6.64 7.7C6.35 7.41 6.35 6.93 6.64 6.64C6.93 6.35 7.41 6.35 7.7 6.64L10 8.94L12.3 6.64C12.59 6.35 13.07 6.35 13.36 6.64C13.65 6.93 13.65 7.41 13.36 7.7L11.06 10L13.36 12.3Z" fill="#596780" />
-                                                </svg>
+                                                </div>
+                                            ) : (
+                                                <div className="flex-shrink-0 w-[20px] h-[20px] bg-gray-100 rounded-full flex items-center justify-center">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 0C4.49 0 0 4.49 0 10C0 15.51 4.49 20 10 20C15.51 20 20 15.51 20 10C20 4.49 15.51 0 10 0ZM13.36 12.3C13.65 12.59 13.65 13.07 13.36 13.36C13.21 13.51 13.02 13.58 12.83 13.58C12.64 13.58 12.45 13.51 12.3 13.36L10 11.06L7.7 13.36C7.55 13.51 7.36 13.58 7.17 13.58C6.98 13.58 6.79 13.51 6.64 13.36C6.35 13.07 6.35 12.59 6.64 12.3L8.94 10L6.64 7.7C6.35 7.41 6.35 6.93 6.64 6.64C6.93 6.35 7.41 6.35 7.7 6.64L10 8.94L12.3 6.64C12.59 6.35 13.07 6.35 13.36 6.64C13.65 6.93 13.65 7.41 13.36 7.7L11.06 10L13.36 12.3Z" fill="#596780" />
+                                                    </svg>
 
-                                            </div>
-                                        )}
-                                        <span className={`ml-3 text-medium-14 lg:text-medium-18 ${feature.active ? 'text-secondary-700' : 'text-secondary-400'}`}>
-                                            {feature.name}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
+                                                </div>
+                                            )}
+                                            <span className={`ml-3 text-medium-14 lg:text-medium-18 ${feature.active ? 'text-secondary-700' : 'text-secondary-400'}`}>
+                                                {feature.name}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
 
 
 
-                            <Button
-                                className={`w-full py-3 px-4 ${plan.name === "Free" ? "md:mt-12" : plan.name === "Ultimate" ? "" : "md:mt-8"}  text-white lg:text-medium-16 text-medium-14 transition-colors `}
-                                label={plan.buttonText}
-                                size='large'
-                            />
-                        </motion.div>
-                                             </Tilt>
-                        
+                                <Button
+                                    className={`w-full py-3 px-4 ${plan.name === "Free" ? "md:mt-12" : plan.name === "Ultimate" ? "" : "md:mt-8"}  text-white lg:text-medium-16 text-medium-14 transition-colors `}
+                                    label={plan.buttonText}
+                                    size='large'
+                                />
+                            </motion.div>
+                        </Tilt>
+
                     ))}
                 </div>
             </div>

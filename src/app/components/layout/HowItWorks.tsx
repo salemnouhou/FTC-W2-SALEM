@@ -14,17 +14,7 @@ import Tilt from 'react-parallax-tilt'
 import Image from 'next/image'
 import Link from 'next/link'
 const HowItWorks = () => {
-    const defaultOptions = {
-        reverse: false,
-        max: 35,
-        perspective: 1000,
-        scale: 1.1,    
-        speed: 1000,  
-        transition: true, 
-        axis: null,    
-        reset: true,    
-        easing: "cubic-bezier(.03,.98,.52,.99)",   
-    }
+
     return (
         <section id="howitworks" className='bg-secondary-700 py-4 lg:py-14 xl:py-20'>
             {/* HOW IT WORKS ONE */}
@@ -76,7 +66,7 @@ const HowItWorks = () => {
                                 image={workOne}
                             />
                         </Tilt>
-                      
+
                     </motion.div>
 
                     <motion.div
@@ -87,12 +77,12 @@ const HowItWorks = () => {
                         className='w-full max-w-[470px] mx-auto rounded-[10.16px]'>
                         <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05} >
 
-                        <Card
-                            variant='howitworks'
-                            title='Fill in the list of your <br /> business expenses.'
-                            titleDesktop='Fill in the list of your <br /> business expenses.'
-                            image={workTwo}
-                        />
+                            <Card
+                                variant='howitworks'
+                                title='Fill in the list of your <br /> business expenses.'
+                                titleDesktop='Fill in the list of your <br /> business expenses.'
+                                image={workTwo}
+                            />
                         </Tilt>
 
                     </motion.div>
@@ -103,12 +93,12 @@ const HowItWorks = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className='w-full max-w-[470px] mx-auto md:col-span-2 lg:col-span-1 rounded-[10.16px]'>
                         <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05}>
-                        <Card
-                            variant='howitworks'
-                            title="Done, let's continue the work."
-                            titleDesktop="Done, let's <br/> continue the work."
-                            image={workTree}
-                        />
+                            <Card
+                                variant='howitworks'
+                                title="Done, let's continue the work."
+                                titleDesktop="Done, let's <br/> continue the work."
+                                image={workTree}
+                            />
                         </Tilt>
 
                     </motion.div>

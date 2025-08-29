@@ -9,17 +9,7 @@ import { motion } from "motion/react"
 import Tilt from 'react-parallax-tilt'
 
 const SuccessStories = () => {
-    const defaultOptions = {
-        reverse: false,
-        max: 35,
-        perspective: 1000,
-        scale: 1.1,    
-        speed: 1000,  
-        transition: true, 
-        axis: null,    
-        reset: true,    
-        easing: "cubic-bezier(.03,.98,.52,.99)",   
-    }
+
     const [activeTab, setActiveTab] = useState('withSpeedIn');
 
     return (
@@ -58,7 +48,7 @@ const SuccessStories = () => {
                 <div className='space-y-[32px] md:space-y-[20px]  flex borer flex-col justify-center  '>
 
 
-                  
+
 
                     <div className=' bg-secondary-100 flex justify-between gap-1 max-w-[319px] rounded-[60px] lg:max-w-md'>
                         <Button
@@ -81,10 +71,10 @@ const SuccessStories = () => {
                     {
                         activeTab === "withSpeedIn" && (
                             <motion.div
-                            initial={{ opacity: 0, x: -43 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                            className='flex flex-col space-y-[32px] justify-center'>
+                                initial={{ opacity: 0, x: -43 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className='flex flex-col space-y-[32px] justify-center'>
                                 <p className='text-bold-16 text-secondary-700 lg:hidden'>Track Business Expenses until its <br /> Milisecond</p>
                                 <p className='text-bold-24 text-secondary-700 hidden lg:block'>Track Business Expenses until its Milisecond</p>
 
@@ -121,11 +111,11 @@ const SuccessStories = () => {
                     {
                         activeTab === "withoutSpeedIn" && (
                             <motion.div
-                            initial={{ opacity: 0, x: -43 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            
-                            className='flex flex-col space-y-[32px] justify-center'>
+                                initial={{ opacity: 0, x: -43 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+
+                                className='flex flex-col space-y-[32px] justify-center'>
                                 <p className='text-bold-16 text-secondary-700 lg:hidden'>Track Business Expenses until its <br /> Milisecond</p>
                                 <p className='text-bold-24 text-secondary-700 hidden lg:block'>Track Business Expenses until its Milisecond</p>
 
@@ -168,40 +158,40 @@ const SuccessStories = () => {
                 {activeTab === "withSpeedIn" && (
                     <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05}>
 
-                    <motion.div
-                    initial={{ opacity: 0, x: 43 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className='flex items-center justify-center  h-full'>
-                        
-                        <ImageWithSkeleton
-                            src={greenChart}
-                            alt="Green Chart"
-                            className='w-full  md:max-w-[470px] rounded-[10.16px]'
+                        <motion.div
+                            initial={{ opacity: 0, x: 43 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className='flex items-center justify-center  h-full'>
 
-                        />
-                        
-                     </motion.div>
-                     </Tilt>
+                            <ImageWithSkeleton
+                                src={greenChart}
+                                alt="Green Chart"
+                                className='w-full  md:max-w-[470px] rounded-[10.16px]'
+
+                            />
+
+                        </motion.div>
+                    </Tilt>
 
                 )}
 
                 {activeTab === "withoutSpeedIn" && (
                     <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05} >
 
-                    <motion.div
-                    initial={{ opacity: 0, x: 43 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className='flex items-center justify-center  h-full'>
+                        <motion.div
+                            initial={{ opacity: 0, x: 43 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className='flex items-center justify-center  h-full'>
 
-                        <ImageWithSkeleton
-                            src={redChart}
-                            alt="Green Chart"
-                            className='w-full h-full  md:max-w-[470px] rounded-[10.16px]'
+                            <ImageWithSkeleton
+                                src={redChart}
+                                alt="Green Chart"
+                                className='w-full h-full  md:max-w-[470px] rounded-[10.16px]'
 
-                        />
-                    </motion.div>
+                            />
+                        </motion.div>
 
                     </Tilt>
 

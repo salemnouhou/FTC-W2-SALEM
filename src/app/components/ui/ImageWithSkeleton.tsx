@@ -1,15 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import clsx from "clsx";
+import { ImageWithSkeletonProps } from "@/app/types";
 
-interface ImageWithSkeletonProps extends Omit<ImageProps, "src" | "alt"> {
-  src: string;
-  alt: string;
-  className?: string;
-  skeletonClassName?: string;
-}
 
 export function ImageWithSkeleton({
   src,
@@ -44,12 +39,13 @@ export function ImageWithSkeleton({
       <Image
         src={src}
         alt={alt}
+        priority
         className={clsx(
           "object-cover transition-opacity duration-500",
           loaded ? "opacity-100" : "opacity-0",
           className
         )}
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={() => setLoaded(true)}
         {...props}
       />
 

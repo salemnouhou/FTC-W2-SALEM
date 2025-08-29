@@ -41,10 +41,10 @@ const Benefits = () => {
                 {/* BENEFITS CARDS SECTION */}
                 <div className='mt-4 md:mt-8   grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 '>
                     <motion.div
-                    initial={{ opacity: 0, x: -43 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className=' md:max-w-[470px]  rounded-[10.16px]  '>
+                        initial={{ opacity: 0, x: -43 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className=' md:max-w-[470px]  rounded-[10.16px]  '>
                         <Card variant='benefitsOne'
                             title='Automatic Invoice Payment'
                             description="No need to pay manually, we provide automatic <br /> invoice payment service! Set a payment schedule <br /> and you're done, it's that easy!"
@@ -55,10 +55,10 @@ const Benefits = () => {
 
                     </motion.div>
                     <motion.div
-                      initial={{ opacity: 0, y: 43 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    className=' md:max-w-[470px]  rounded-[10.16px]  '>
+                        initial={{ opacity: 0, y: 43 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className=' md:max-w-[470px]  rounded-[10.16px]  '>
                         <Card variant='benefitsOne'
                             title='Clear payment history'
                             description="Still writing manual expenses? Our platform breaks <br /> down every expense you log down to the <br /> millisecond!"
@@ -67,12 +67,12 @@ const Benefits = () => {
                         />
 
                     </motion.div>
-                    <motion.div 
-                    initial={{ opacity: 0, x: 43 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    
-                    className=' md:max-w-[470px]  rounded-[10.16px] '>
+                    <motion.div
+                        initial={{ opacity: 0, x: 43 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+
+                        className=' md:max-w-[470px]  rounded-[10.16px] '>
                         <Card variant='benefitsOne'
                             title='Use of multi-card payments'
                             description="Have more than 1 bank account or credit/debit card? <br /> Our platform is already integrated with many banks <br /> around the world, for easier payments!"
@@ -100,8 +100,8 @@ const Benefits = () => {
 
             <div className='py-10 lg:py-14 xl:py-20 max-w-[1200px] lg:mt-14  2xl:max-w-[1440px] mx-auto px-4'>
 
-            <div className='flex flex-col mb-8 md:hidden md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
-                  
+                <div className='flex flex-col mb-8 md:hidden md:flex-row md:gap-[163px]  md:items-center space-y-[6px]'>
+
 
                     <div className='flex flex-col space-y-[6px]'>
                         <span className='text-medium-12 text-primary-500'>WHY USE SPEND.IN</span>
@@ -114,7 +114,7 @@ const Benefits = () => {
                         These are some of the reasons why you should use our
                         platform in managing business finances.
                     </div>
-                   
+
 
                 </div>
 
@@ -141,10 +141,10 @@ const Benefits = () => {
 
                 <div className='mt-2 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 items-start'>
                     <motion.div
-                    initial={{ opacity: 0, x: -43 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className='space-y-6 flex flex-col justify-center h-full'>
+                        initial={{ opacity: 0, x: -43 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className='space-y-6 flex flex-col justify-center h-full'>
                         <LeftBenefit
                             title='Automatic Invoice Payment'
                             descriptionPhone='Automatic payments help you to arrange <br/> payments on a certain date without doing it <br/> manually again.'
@@ -185,10 +185,10 @@ const Benefits = () => {
                     {/* Colonne droite - Card principale */}
                     <div className='flex  items-center justify-center'>
                         <motion.div
-                        initial={{ opacity: 0, x: 43 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className='w-full md:max-w-[470px] rounded-[10.16px]'>
+                            initial={{ opacity: 0, x: 43 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className='w-full md:max-w-[470px] rounded-[10.16px]'>
                             <Card
                                 variant='benefitsTwo'
                                 image={Content}

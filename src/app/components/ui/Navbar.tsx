@@ -17,7 +17,7 @@ const Navbar = () => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
     const [scrolled, setScrolled] = useState(false);
-    
+
 
     const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -37,12 +37,12 @@ const Navbar = () => {
 
 
     useEffect(() => {
-      const handleScroll = () => {
-        setScrolled(window.scrollY > 50); 
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     useEffect(() => {
@@ -83,10 +83,14 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50  text-white transition-colors duration-500 
-            ${scrolled ? "bg-black/80 backdrop-blur-lg" : "bg-transparent border-b border-[#FFFFFF29]"}`}
-          >
-
+        // <nav className="bg-transparent relative border-[#FFFFFF29] border-b text-white w-screen z-50">
+        <nav
+            className={`
+    relative bg-transparent border-b border-[#FFFFFF29] text-white w-screen z-50
+    xl:fixed lg:top-0 lg:left-0 lg:transition-colors lg:duration-500
+    ${scrolled ? "lg:bg-black/80 lg:backdrop-blur-lg" : "lg:bg-transparent lg:border-b lg:border-[#FFFFFF29]"}
+  `}
+        >
             <div className="max-w-[1440px]  mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between py-4  md:py-3">
                     <Link href="/" className="flex items-center">

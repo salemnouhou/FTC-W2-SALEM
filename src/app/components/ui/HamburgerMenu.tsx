@@ -1,13 +1,8 @@
-import React from "react";
-
-
 //ce composant HamburgerMenu est utilisé pour afficher un bouton hamburger qui permet d'ouvrir et de fermer le menu de navigation sur les écrans mobiles.
 // Il prend deux props : isMenuOpen (un booléen indiquant si le menu est ouvert ou fermé) et toggleMenu (une fonction pour basculer l'état du menu).
-type HamburgerMenuProps = {
-  isMenuOpen: boolean;
-  toggleMenu: () => void;
-};
-
+"use client";
+import React from "react";
+import { HamburgerMenuProps } from "@/app/types/";
 
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isMenuOpen, toggleMenu }) => {
 

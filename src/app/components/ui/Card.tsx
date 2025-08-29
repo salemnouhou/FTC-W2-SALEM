@@ -1,31 +1,11 @@
 
-
-import React, { ReactNode } from "react";
+"use client"
+import React from "react";
 import clsx from "clsx";
-import Image from "next/image";
 import { ImageWithSkeleton } from "./ImageWithSkeleton";
+import { CardProps } from "@/app/types/card";
 
-type CardVariant = "testimonial" | "benefitsOne" | "benefitsTwo" | "howitworks" | "howitworksTwo";
 
-interface CardProps {
-  variant?: CardVariant;
-  children?: ReactNode;
-  image?: string;
-  title?: string;
-  description?: string;
-  author?: string;
-  className?: string;
-  benefitType?: string;
-  titleDesktop?: string;
-  howItWorksType?: string;
-
-  testimonyTitle?: string;
-  testimonyDescription?: string;
-  testimonyDescriptionDesktop?: string;
-  testimonyAuthor?: string;
-  testimonyImage?: string;
-  testimonyRole?: string;
-}
 
 const Card: React.FC<CardProps> = ({
   variant = "default",
@@ -101,7 +81,7 @@ const Card: React.FC<CardProps> = ({
               width={320}
               height={200}
               className="absolute w-full -bottom-[120px] md:-bottom-[70px] lg:-bottom-[120px] right-4 z-0 "
-            
+
             />
           )}
           {image && benefitType === "second" && (
