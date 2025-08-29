@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Button from '../ui/Button';
 import { motion } from "motion/react"
-import { Tilt } from 'react-tilt'
+import Tilt from 'react-parallax-tilt'
 
 const Pricing = () => {
     const defaultOptions = {
@@ -151,7 +151,7 @@ const Pricing = () => {
 
                 <div className="flex  flex-col lg:flex-row  lg:justify-center gap-6 lg:gap-8 max-w-6xl mx-auto">
                     {plans.map((plan, index) => (
-                <Tilt  key={plan.name} options={defaultOptions} >
+                <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05}  key={plan.name}  >
                         
                         <motion.div
                         initial={{ opacity: 0, y: 43 }}

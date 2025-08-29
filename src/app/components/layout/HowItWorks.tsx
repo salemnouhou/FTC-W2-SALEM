@@ -9,7 +9,7 @@ import WorkTwoLeft from '@/assets/images/HowItWorks/WorkTwoLeft.svg'
 import WorkTwoRight from '@/assets/images/HowItWorks/WorkTwoRight.svg'
 import WorkTwoDown from '@/assets/images/HowItWorks/WorkTwoDown.svg'
 import { motion } from "motion/react"
-import { Tilt } from 'react-tilt'
+import Tilt from 'react-parallax-tilt'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -68,7 +68,7 @@ const HowItWorks = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className='w-full max-w-[470px] mx-auto rounded-[10.16px]'>
 
-                        <Tilt options={defaultOptions} >
+                        <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05} >
                             <Card
                                 variant='howitworks'
                                 title='Register your <br /> Spend.In account.'
@@ -85,7 +85,7 @@ const HowItWorks = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className='w-full max-w-[470px] mx-auto rounded-[10.16px]'>
-                        <Tilt options={defaultOptions} >
+                        <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05} >
 
                         <Card
                             variant='howitworks'
@@ -102,7 +102,7 @@ const HowItWorks = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className='w-full max-w-[470px] mx-auto md:col-span-2 lg:col-span-1 rounded-[10.16px]'>
-                        <Tilt options={defaultOptions} >
+                        <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05}>
                         <Card
                             variant='howitworks'
                             title="Done, let's continue the work."

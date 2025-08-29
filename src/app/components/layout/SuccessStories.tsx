@@ -6,7 +6,7 @@ import greenChart from "@/assets/images/successStories/greenChart.svg"
 import redChart from "@/assets/images/successStories/redChart.svg"
 import { ImageWithSkeleton } from '../ui/ImageWithSkeleton'
 import { motion } from "motion/react"
-import { Tilt } from 'react-tilt'
+import Tilt from 'react-parallax-tilt'
 
 const SuccessStories = () => {
     const defaultOptions = {
@@ -166,7 +166,7 @@ const SuccessStories = () => {
 
                 {/* Colonne droite - Card principale */}
                 {activeTab === "withSpeedIn" && (
-                    <Tilt options={defaultOptions} >
+                    <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05}>
 
                     <motion.div
                     initial={{ opacity: 0, x: 43 }}
@@ -187,7 +187,7 @@ const SuccessStories = () => {
                 )}
 
                 {activeTab === "withoutSpeedIn" && (
-                    <Tilt options={defaultOptions} >
+                    <Tilt tiltMaxAngleX={20} tiltMaxAngleY={20} perspective={1000} scale={1.05} >
 
                     <motion.div
                     initial={{ opacity: 0, x: 43 }}
