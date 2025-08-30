@@ -11,7 +11,22 @@ import Link from 'next/link';
 import { motion } from "motion/react";
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+// Enregistrement du plugin GSAP pour le scroll animé
 gsap.registerPlugin(ScrollToPlugin);
+
+/**
+ * Composant Navbar - Barre de navigation principale
+ * 
+ * Fonctionnalités :
+ * - Navigation responsive (desktop/mobile)
+ * - Menus déroulants pour Products et Company
+ * - Animation de scroll avec GSAP
+ * - Changement de style au scroll (transparent → opaque)
+ * - Menu hamburger pour mobile
+ * - Gestion des clics extérieurs
+ * - Intégration du logo et des boutons CTA
+ */
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);

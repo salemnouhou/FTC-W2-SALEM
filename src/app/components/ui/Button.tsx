@@ -4,6 +4,19 @@ import clsx from "clsx";
 import { motion } from "motion/react"
 import { ButtonProps, ButtonSize, ButtonVariant } from "@/app/types";
 
+/**
+ * Composant Button - Bouton personnalisable avec animations
+ * 
+ * Caractéristiques :
+ * - 3 tailles : small, medium, large
+ * - 3 variantes : primary, secondary, minimal
+ * - Support des icônes (gauche et droite)
+ * - Intégration Cal.com pour les rendez-vous
+ * - Animations d'entrée avec Framer Motion
+ * - États : enabled, disabled
+ * - Design responsive et accessible
+ */
+
 
 
 const Button: React.FC<ButtonProps> = ({

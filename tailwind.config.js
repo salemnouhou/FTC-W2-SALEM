@@ -1,6 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 import plugin from "tailwindcss/plugin";
 
+/**
+ * Configuration Tailwind CSS personnalisée pour le projet FTC-W2-SALEM
+ * 
+ * Cette configuration étend Tailwind avec :
+ * - Police personnalisée Plus Jakarta Sans
+ * - Système de couleurs sur mesure (primary, secondary, success)
+ * - Classes de typographie responsive (12px à 72px)
+ * - Utilitaires personnalisés pour les poids de police
+ * - Support des composants Next.js et React
+ */
 const tailwindConfig = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',

@@ -2,11 +2,21 @@
 import React from 'react'
 import { Card, LeftBenefit } from "@/app/components"
 
+// Import des images SVG pour les avantages
 import Content from "../../../assets/images/Benefits/Content.svg"
 import BenefitOneTest from "../../../assets/images/Benefits/BenefitOneTest.svg"
 import BenefitTwoTest from "../../../assets/images/Benefits/BenefitTwoTest.svg"
 import BenefitThreeTest from "../../../assets/images/Benefits/BenefitThreeTest.svg"
 import { motion } from "motion/react"
+
+/**
+ * Composant Benefits - Section des avantages de la plateforme
+ * 
+ * Présente les 3 principaux avantages de Spend.In :
+ * 1. Paiement automatique des factures
+ * 2. Historique de paiement détaillé
+ * 3. Support multi-cartes bancaires
+ */
 
 const Benefits = () => {
     return (

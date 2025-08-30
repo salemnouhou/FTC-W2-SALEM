@@ -1,18 +1,36 @@
 "use client";
 import React from 'react'
 import Card from '../ui/Card'
-import workOne from '@/assets/images/HowItWorks/workOne.svg'
-import workTwo from '@/assets/images/HowItWorks/workTwo.svg'
-import workTree from '@/assets/images/HowItWorks/workTree.svg'
+
+// Import des images SVG pour les étapes du processus
+import workOne from '@/assets/images/HowItWorks/workOne.svg'      // Étape 1 : Inscription
+import workTwo from '@/assets/images/HowItWorks/workTwo.svg'      // Étape 2 : Saisie des dépenses
+import workTree from '@/assets/images/HowItWorks/workTree.svg'    // Étape 3 : Finalisation
 import Button from '../ui/Button'
+
+// Import des éléments visuels pour l'étape 2 (éléments directionnels)
 import WorkTwoLeft from '@/assets/images/HowItWorks/WorkTwoLeft.svg'
 import WorkTwoRight from '@/assets/images/HowItWorks/WorkTwoRight.svg'
 import WorkTwoDown from '@/assets/images/HowItWorks/WorkTwoDown.svg'
-import { motion } from "motion/react"
-import Tilt from 'react-parallax-tilt'
 
+// Bibliothèques d'animation
+import { motion } from "motion/react"        // Animations d'entrée
+import Tilt from 'react-parallax-tilt'       // Effet de parallaxe 3D
+
+// Composants Next.js
 import Image from 'next/image'
 import Link from 'next/link'
+
+/**
+ * Composant HowItWorks - Section "Comment ça marche"
+ * 
+ * Présente le processus en 3 étapes pour utiliser Spend.In :
+ * 1. Créer un compte
+ * 2. Saisir les dépenses business
+ * 3. Commencer à travailler
+ * 
+ * Utilise des effets de parallaxe et des animations pour une UX immersive
+ */
 const HowItWorks = () => {
 
     return (

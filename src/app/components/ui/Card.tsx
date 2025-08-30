@@ -5,6 +5,23 @@ import clsx from "clsx";
 import { ImageWithSkeleton } from "./ImageWithSkeleton";
 import { CardProps } from "@/app/types/card";
 
+/**
+ * Composant Card - Carte polyvalente avec plusieurs variantes
+ * 
+ * Variantes disponibles :
+ * - testimonial : Carte de témoignage client avec photo et rôle
+ * - benefitsOne : Carte d'avantage avec image et description
+ * - howitworks : Carte de processus avec titre et image
+ * - pricing : Carte de tarification avec prix et fonctionnalités
+ * 
+ * Caractéristiques :
+ * - Design responsive avec breakpoints mobile/tablet/desktop
+ * - Images avec skeleton loading
+ * - Support des variantes de contenu
+ * - Classes CSS conditionnelles avec clsx
+ * - Intégration des types TypeScript
+ */
+
 
 
 const Card: React.FC<CardProps> = ({
