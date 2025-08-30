@@ -7,6 +7,7 @@ import { useScrollProgress } from '@/app/hooks';
  * Affiche une barre de progression en haut de la page qui indique
  * le niveau de défilement actuel par rapport au contenu total
  */
+
 export default function ScrollProgressBar() {
   // Utilisation du hook personnalisé pour la progression du scroll
   const { scrollProgress } = useScrollProgress();
