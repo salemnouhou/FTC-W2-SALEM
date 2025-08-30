@@ -38,4 +38,10 @@ export { default as CustomCursor } from "./ui/CustomCursor"; // Curseur personna
 export { ImageWithSkeleton } from "./ui/ImageWithSkeleton"; // Image avec skeleton loading
 export { default as LeftSuccessStoris } from "./ui/LeftSuccessStoris"; // Histoires de succès avec image à gauche
 
+// ========================================
+// HOOKS PERSONNALISÉS
+// ========================================
+// Hooks réutilisables pour la logique métier
+export * from "../hooks";
+
 

@@ -1,12 +1,13 @@
 "use client";
-import { useState } from 'react';
+import { useToggle } from '@/app/hooks';
 import Button from '../ui/Button';
 import { motion } from "motion/react"
 import Tilt from 'react-parallax-tilt'
 
 const Pricing = () => {
 
-    const [isYearly, setIsYearly] = useState(true);
+    // Utilisation du hook personnalisé pour la gestion du toggle
+    const { value: isYearly, toggle: toggleYearly } = useToggle(true);
 
     const plans = [
         {
@@ -76,7 +77,7 @@ const Pricing = () => {
     ];
 
     const handleToggle = () => {
-        setIsYearly(!isYearly);
+                                toggleYearly();
     };
 
     return (

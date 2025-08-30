@@ -1,29 +1,28 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCustomCursor } from '@/app/hooks';
 
+/**
+ * Composant CustomCursor - Curseur personnalisé
+ * 
+ * Remplace le curseur par défaut par un curseur personnalisé
+ * qui suit le mouvement de la souris avec des animations fluides
+ */
 const CustomCursor = () => {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMove = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
+  // Utilisation du hook personnalisé pour la position du curseur
+  const { cursorPosition } = useCustomCursor();
 
   return (
     <>
       <div
         className="fixed w-10 h-10 hidden xl:block rounded-full border-2 border-primary-500 pointer-events-none z-[9999] transition-transform duration-75 ease-out"
         style={{
-          transform: `translate(${pos.x - 20}px, ${pos.y - 20}px)`,
+          transform: `translate(${cursorPosition.x - 20}px, ${cursorPosition.y - 20}px)`,
         }}
       />
       <div
         className="fixed w-2 h-2 hidden xl:block rounded-full bg-gray-200 pointer-events-none z-[9999]"
         style={{
-          transform: `translate(${pos.x - 4}px, ${pos.y - 4}px)`,
+          transform: `translate(${cursorPosition.x - 4}px, ${cursorPosition.y - 4}px)`,
         }}
       />
     </>

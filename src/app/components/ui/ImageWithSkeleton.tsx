@@ -1,11 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { ImageWithSkeletonProps } from "@/app/types";
+import { useImageLoading } from '@/app/hooks';
 
-
+/**
+ * Composant ImageWithSkeleton - Image avec skeleton loading
+ * 
+ * Affiche un skeleton animé pendant le chargement de l'image
+ * puis bascule vers l'image une fois chargée
+ */
 export function ImageWithSkeleton({
   src,
   alt,
@@ -13,11 +18,12 @@ export function ImageWithSkeleton({
   skeletonClassName,
   ...props
 }: ImageWithSkeletonProps) {
-  const [loaded, setLoaded] = useState(false);
+  // Utilisation du hook personnalisé pour la gestion du chargement
+  const { isLoaded, handleImageLoad } = useImageLoading();
 
   return (
     <div className="relative w-full h-full">
-      {!loaded && (
+      {!isLoaded && (
         <div
           className={clsx(
             "absolute inset-0 rounded-md overflow-hidden",
@@ -40,12 +46,12 @@ export function ImageWithSkeleton({
         src={src}
         alt={alt}
         priority
-        className={clsx(
-          "object-cover transition-opacity duration-500",
-          loaded ? "opacity-100" : "opacity-0",
-          className
-        )}
-        onLoad={() => setLoaded(true)}
+                  className={clsx(
+            "object-cover transition-opacity duration-500",
+            isLoaded ? "opacity-100" : "opacity-0",
+            className
+          )}
+          onLoad={handleImageLoad}
         {...props}
       />
 

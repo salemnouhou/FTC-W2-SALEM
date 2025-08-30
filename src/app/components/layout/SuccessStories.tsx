@@ -1,5 +1,6 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
+import { useTabs } from '@/app/hooks';
 import LeftSuccessStories from '../ui/LeftSuccessStoris'
 import Button from '../ui/Button'
 import greenChart from "@/assets/images/successStories/greenChart.svg"
@@ -10,7 +11,8 @@ import Tilt from 'react-parallax-tilt'
 
 const SuccessStories = () => {
 
-    const [activeTab, setActiveTab] = useState('withSpeedIn');
+    // Utilisation du hook personnalisé pour la gestion des onglets
+    const { activeTab, changeTab } = useTabs('withSpeedIn', ['withSpeedIn', 'withoutSpeedIn']);
 
     return (
         <section className='py-10 lg:py-20 max-w-[1200px]   2xl:max-w-[1440px] mx-auto px-4 mt-8'>
@@ -56,14 +58,14 @@ const SuccessStories = () => {
                             size='medium'
                             label='With speed In'
                             className='h-[45.08px] w-full text-medium-14'
-                            onClick={() => setActiveTab('withSpeedIn')}
+                            onClick={() => changeTab('withSpeedIn')}
                         />
                         <Button
                             variant={activeTab === 'withoutSpeedIn' ? 'primary' : 'minimal'}
                             size='medium'
                             label='Without Speed.In'
                             className='h-[45.08px] w-full text-medium-14'
-                            onClick={() => setActiveTab('withoutSpeedIn')}
+                            onClick={() => changeTab('withoutSpeedIn')}
                         />
                     </div>
 

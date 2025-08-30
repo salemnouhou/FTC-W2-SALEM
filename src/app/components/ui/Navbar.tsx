@@ -2,18 +2,13 @@
 
 "use client"
 import React from 'react'
-import { useState, useRef, useEffect } from 'react';
 import Logo from "@/app/components/ui/Logo"
 import HamburgerMenu from './HamburgerMenu';
 import ArrowDown from './ArrowDown';
 import Button from './Button';
 import Link from 'next/link';
 import { motion } from "motion/react";
-import { gsap } from 'gsap';
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-// Enregistrement du plugin GSAP pour le scroll animé
-gsap.registerPlugin(ScrollToPlugin);
+import { useNavigation } from '@/app/hooks';
 
 /**
  * Composant Navbar - Barre de navigation principale
@@ -28,74 +23,19 @@ gsap.registerPlugin(ScrollToPlugin);
  * - Intégration du logo et des boutons CTA
  */
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-    const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
-    const [scrolled, setScrolled] = useState(false);
-
-
-    const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
-
-    interface ScrollToSection {
-        (sectionId: string): void;
-    }
-
-
-    const scrollToSection: ScrollToSection = (sectionId) => {
-        gsap.to(window, { duration: 1.5, scrollTo: sectionId, ease: "power2.inOut" });
-        setIsMenuOpen(false);
-
-
-    };
-
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (openDropdown && dropdownRefs.current[openDropdown] &&
-                !dropdownRefs.current[openDropdown].contains(event.target as Node)) {
-                setOpenDropdown(null);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [openDropdown]);
-
-    const toggleDropdown = (dropdownName: string) => {
-        setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
-    };
-
-    const toggleMobileDropdown = (dropdownName: string) => {
-        setOpenMobileDropdown(openMobileDropdown === dropdownName ? null : dropdownName);
-    };
-
-    const dropdownMenus = {
-        products: [
-            { label: 'Business expense', href: '#' },
-            { label: 'Corporate cards', href: '#' },
-            { label: 'Reporting tools', href: '#' },
-            { label: 'Banking integrations', href: '#' }
-        ],
-        company: [
-            { label: 'About Us', href: '#' },
-            { label: 'Our Team', href: '#' },
-            { label: 'Careers', href: '#' },
-            { label: 'Contact', href: '#' }
-        ]
-    };
+    // Utilisation du hook personnalisé pour la navigation
+    const {
+        isMenuOpen,
+        openDropdown,
+        openMobileDropdown,
+        scrolled,
+        dropdownRefs,
+        setIsMenuOpen,
+        scrollToSection,
+        toggleDropdown,
+        toggleMobileDropdown,
+        dropdownMenus
+    } = useNavigation();
 
     return (
         // <nav className="bg-transparent relative border-[#FFFFFF29] border-b text-white w-screen z-50">
@@ -137,7 +77,7 @@ const Navbar = () => {
                                                     key={index}
                                                     href={item.href}
                                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150"
-                                                    onClick={() => setOpenDropdown(null)}
+                                                    onClick={() => toggleDropdown('')}
                                                 >
                                                     {item.label}
                                                 </a>
@@ -179,7 +119,7 @@ const Navbar = () => {
                                                     key={index}
                                                     href={item.href}
                                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150"
-                                                    onClick={() => setOpenDropdown(null)}
+                                                    onClick={() => toggleDropdown('')}
                                                 >
                                                     {item.label}
                                                 </a>
@@ -261,7 +201,7 @@ const Navbar = () => {
                                             href={item.href}
                                             className="block px-3 py-2 rounded-md text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
                                             onClick={() => {
-                                                setOpenMobileDropdown(null);
+                                                toggleMobileDropdown('');
                                                 setIsMenuOpen(false);
                                             }}
                                         >
@@ -310,7 +250,7 @@ const Navbar = () => {
                                             href={item.href}
                                             className="block px-3 py-2 rounded-md text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
                                             onClick={() => {
-                                                setOpenMobileDropdown(null);
+                                                toggleMobileDropdown('');
                                                 setIsMenuOpen(false);
                                             }}
                                         >

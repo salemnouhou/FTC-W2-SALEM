@@ -142,6 +142,17 @@ http://localhost:3000
 │   │   │   ├── HamburgerMenu.ts
 │   │   │   └── ImageSkeleton.ts
 │   │   └── 📁 hooks/
+│   │       ├── 📄 index.ts
+│   │       ├── 📄 README.md
+│   │       ├── useNavigation.ts
+│   │       ├── use3DAnimations.ts
+│   │       ├── useCalIntegration.ts
+│   │       ├── useScrollAnimation.ts
+│   │       ├── useScrollProgress.ts
+│   │       ├── useCustomCursor.ts
+│   │       ├── useTabs.ts
+│   │       ├── useToggle.ts
+│   │       └── useImageLoading.ts
 │   └── 📁 assets/
 │       └── 📁 images/
 │           ├── dashboard.png
@@ -237,6 +248,22 @@ L'application est entièrement responsive avec des breakpoints optimisés :
 - Curseur personnalisé
 - Barre de progression du scroll
 - Menu hamburger animé
+
+## 🪝 Hooks Personnalisés
+
+L'application utilise des hooks personnalisés pour centraliser la logique métier :
+
+- **`useNavigation`** - Gestion des menus et navigation
+- **`use3DAnimations`** - Animations GSAP 3D
+- **`useCalIntegration`** - Intégration Cal.com
+- **`useScrollAnimation`** - Scroll animé avec GSAP
+- **`useScrollProgress`** - Barre de progression du scroll
+- **`useCustomCursor`** - Curseur personnalisé
+- **`useTabs`** - Gestion des onglets
+- **`useToggle`** - États booléens avec toggle
+- **`useImageLoading`** - Chargement d'images avec skeleton
+
+Voir `src/app/hooks/README.md` pour la documentation complète.
 
 ## 🔧 Configuration
 

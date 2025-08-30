@@ -1,17 +1,12 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Navbar from "../ui/Navbar";
 import Button from "../ui/Button";
 import DashboardHero from '@/assets/images/DashbardHero.svg';
 import ScrollProgressBar from "../ui/ScrollProgressBar";
-import { gsap } from 'gsap';
-import { getCalApi } from "@calcom/embed-react";
 import { ImageWithSkeleton } from "../ui/ImageWithSkeleton";
 import { motion } from "motion/react"
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-// Enregistrement du plugin GSAP pour le scroll animé
-gsap.registerPlugin(ScrollToPlugin);
+import { use3DAnimations, useCalIntegration, useScrollAnimation } from '@/app/hooks';
 
 /**
  * Composant Hero - Section d'accueil principale
@@ -24,89 +19,13 @@ gsap.registerPlugin(ScrollToPlugin);
  * - Les animations d'entrée avec Framer Motion
  */
 const Hero: React.FC = () => {
-  // Références pour les éléments DOM et les animations
-  const imageRef = useRef<HTMLDivElement>(null);  // Référence vers l'image pour les effets 3D
-  const heroRef = useRef<HTMLElement>(null);      // Référence vers la section hero
+  // Référence vers la section hero
+  const heroRef = useRef<HTMLElement>(null);
 
-  // Interface pour la fonction de scroll animé
-  interface ScrollToSection {
-    (sectionId: string): void;
-  }
-
-  /**
-   * Fonction pour faire défiler la page vers une section spécifique
-   * Utilise GSAP pour une animation fluide et contrôlée
-   */
-  const scrollToSection: ScrollToSection = (sectionId) => {
-    gsap.to(window, { duration: 1.5, scrollTo: sectionId, ease: "power2.inOut" });
-  };
-
-  // Effet pour initialiser l'intégration Cal.com (calendrier de rendez-vous)
-  useEffect(() => {
-    (async () => {
-      const cal = await getCalApi({ namespace: "talk-to-an-expert" });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view", theme: "dark" });
-    })();
-  }, []);
-
-  // Effet principal pour les animations GSAP et les interactions 3D
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const imageElement = imageRef.current;
-      
-      if (imageElement) {
-        /**
-         * Gestionnaire de mouvement de la souris pour l'effet 3D
-         * Calcule la position relative de la souris par rapport au centre de l'image
-         * et applique une rotation 3D en temps réel
-         */
-        const handleMouseMove = (e: MouseEvent) => {
-          const rect = imageElement.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;   // Centre X de l'image
-          const centerY = rect.top + rect.height / 2;   // Centre Y de l'image
-
-          // Calcul des deltas pour la rotation (valeurs entre -1 et 1)
-          const deltaX = (e.clientX - centerX) / rect.width;
-          const deltaY = (e.clientY - centerY) / rect.height;
-
-          // Animation GSAP pour la rotation 3D de l'image
-          gsap.to(imageElement, {
-            rotationY: deltaX * 10,        // Rotation Y basée sur la position X de la souris
-            rotationX: -deltaY * 10,       // Rotation X basée sur la position Y de la souris
-            transformPerspective: 1000,    // Perspective 3D pour un effet réaliste
-            duration: 0.5,                 // Durée de l'animation
-            ease: "power2.out"             // Courbe d'animation
-          });
-        };
-
-        /**
-         * Gestionnaire de sortie de la souris
-         * Remet l'image dans sa position normale avec une animation fluide
-         */
-        const handleMouseLeave = () => {
-          gsap.to(imageElement, {
-            rotationY: 0,                  // Remise à zéro de la rotation Y
-            rotationX: 0,                  // Remise à zéro de la rotation X
-            duration: 0.8,                 // Durée de retour à la normale
-            ease: "power2.out"             // Courbe d'animation
-          });
-        };
-
-        // Ajout des écouteurs d'événements pour les interactions 3D
-        imageElement.addEventListener('mousemove', handleMouseMove);
-        imageElement.addEventListener('mouseleave', handleMouseLeave);
-
-        // Nettoyage des écouteurs lors du démontage du composant
-        return () => {
-          imageElement.removeEventListener('mousemove', handleMouseMove);
-          imageElement.removeEventListener('mouseleave', handleMouseLeave);
-        };
-      }
-    }, heroRef);
-
-    // Nettoyage du contexte GSAP
-    return () => ctx.revert();
-  }, []);
+  // Utilisation des hooks personnalisés
+  const { imageRef } = use3DAnimations();        // Animations 3D sur l'image
+  useCalIntegration();                           // Intégration Cal.com
+  const { scrollToSection } = useScrollAnimation(); // Scroll animé vers les sections
 
   return (
     // Section principale du hero avec fond sombre et débordement caché
