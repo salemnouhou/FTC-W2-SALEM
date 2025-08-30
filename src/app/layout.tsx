@@ -13,7 +13,10 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Spending Management — Landing Page Design",
   description: "Spending Management — Landing Page Design",
- 
+  icons: {
+    icon: '/favicon-browser.png',
+    apple: '/favicon-browser.png',
+  },
 };
 export default function RootLayout({
   children,
@@ -22,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
         className={`${jakarta.variable} `}
       >
